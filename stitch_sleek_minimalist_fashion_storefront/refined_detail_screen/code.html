@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ETHEREAL - Product Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Noto+Serif:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#e3e2e2",
+                        "on-tertiary-fixed": "#1a1c1b",
+                        "on-primary-container": "#848484",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#838483",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#454746",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-primary-fixed": "#1b1b1b",
+                        "outline": "#7e7576",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#5e5e5e",
+                        "tertiary-container": "#1a1c1b",
+                        "tertiary": "#000000",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-surface-variant": "#4c4546",
+                        "tertiary-fixed-dim": "#c6c7c5",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-variant": "#e2e2e2",
+                        "outline-variant": "#cfc4c5",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed-variant": "#474747",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-dim": "#dadada",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "primary": "#000000",
+                        "on-surface": "#1a1c1c",
+                        "inverse-on-surface": "#f0f1f1",
+                        "primary-container": "#1b1b1b",
+                        "background": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9f9",
+                        "on-background": "#1a1c1c",
+                        "secondary": "#5e5e5e",
+                        "secondary-fixed": "#e3e2e2",
+                        "primary-fixed": "#e2e2e2",
+                        "tertiary-fixed": "#e2e3e1",
+                        "on-secondary-container": "#646464",
+                        "error": "#ba1a1a",
+                        "surface": "#f9f9f9",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "container-max": "1440px",
+                        "section-gap": "128px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Noto Serif"],
+                        "headline-xl": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["2rem", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "headline-xl": ["4.5rem", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "headline-lg": ["3rem", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "body-lg": ["1.125rem", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "label-caps": ["0.75rem", { "lineHeight": "1.2", "letterSpacing": "0.15em", "fontWeight": "500" }],
+                        "body-md": ["1rem", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-background antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-sm border-b border-zinc-100 flex justify-between items-center px-8 md:px-16 h-20 transition-all ease-in-out">
+<div class="flex items-center gap-8">
+<a class="text-2xl font-serif tracking-tighter text-zinc-900 uppercase" href="#">ETHEREAL</a>
+<div class="hidden md:flex gap-8">
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-zinc-400 hover:text-zinc-900 transition-all duration-500" href="#">Collections</a>
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-zinc-400 hover:text-zinc-900 transition-all duration-500" href="#">Archive</a>
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-zinc-400 hover:text-zinc-900 transition-all duration-500" href="#">Journal</a>
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-zinc-900 border-b border-zinc-900 pb-0.5 transition-all duration-500" href="#">Atelier</a>
+</div>
+</div>
+<div class="flex items-center gap-6 text-zinc-900">
+<button aria-label="Search" class="hover:opacity-60 transition-all duration-500">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button aria-label="Account" class="hover:opacity-60 transition-all duration-500">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button aria-label="Shopping Bag" class="hover:opacity-60 transition-all duration-500">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Product Detail Section -->
+<section class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-16 grid grid-cols-1 lg:grid-cols-12 gap-gutter min-h-screen">
+<!-- Left: Editorial Imagery -->
+<div class="lg:col-span-7 flex flex-col gap-unit">
+<img alt="A striking high-fashion editorial photograph of a minimalist garment in a stark, bright gallery setting. The composition is highly structured, emphasizing clean lines and luxurious void space. The lighting is crisp and soft white, highlighting the premium texture of the fabric against a pristine white background. The mood is calm, exclusive, and undeniably modern." class="w-full h-auto object-cover bg-surface-container-low" data-alt="A striking high-fashion editorial photograph of a minimalist garment in a stark, bright gallery setting. The composition is highly structured, emphasizing clean lines and luxurious void space. The lighting is crisp and soft white, highlighting the premium texture of the fabric against a pristine white background. The mood is calm, exclusive, and undeniably modern." src="https://lh3.googleusercontent.com/aida/ADBb0ui1G14OFRlfytdQUtvBkaOx0PkHWnQw9B1KMCPHnr9Oz-0BD33RAEmL2L-ezdeCXabky8zqYWPz0lu4nQ_xeXW8utYwiWBHj94fEB6LZaBBsyACMQQpmXmSEbR5cZ1B5Z4J4SNcYl6MXqrNyktxviF36_PDDneU0pQZtZ54NN8Dns4ErL6tfoP85fNlcDtwsvmuf_Le5aOmNk7-TNqvGkelqaXX6DFOhaft2XcB-0UwZ6I_rt11ocmlYt5pMrrEyZ0Sx0G7iIM2"/>
+<div class="grid grid-cols-2 gap-unit">
+<img alt="A close-up detail shot of exquisite tailoring on a modern classic fashion piece. The image focuses on the minimalist seam lines and the subtle weave of the high-end material. Bathed in high-key, diffused studio lighting, the aesthetic perfectly aligns with a quiet luxury brand. The overall palette is monochrome, dominated by nuanced shades of gray and white." class="w-full h-auto object-cover bg-surface-container-low" data-alt="A close-up detail shot of exquisite tailoring on a modern classic fashion piece. The image focuses on the minimalist seam lines and the subtle weave of the high-end material. Bathed in high-key, diffused studio lighting, the aesthetic perfectly aligns with a quiet luxury brand. The overall palette is monochrome, dominated by nuanced shades of gray and white." src="https://lh3.googleusercontent.com/aida/ADBb0uhNW_45jBgJ0rtHpLI6QQKMOHDT9dQRkubrVAsMhIhkr-eTX916hgid3sPd50-oTOaJTZkRuW6-J-zRyvb6zyb-mVtgm5YEBYyt_B0m4WxQeG0JD90KKbxtl-3Sq1lJl-xGcQD5LJdOmX_fKwH_bGTY53ZhFRMc-h7eNMfndZjaLo6ihflo3Ti5YkoQEMbpGp68UOX0piikKDndUqLf5o83LSdi_E-zgPr0pR8PSXUkv39ptUw9cNSCm0-NsH4c4qODTGbnif8Irw"/>
+<img alt="An atmospheric fashion portrait captured in an avant-garde architectural space. The model is draped in flowing, monochromatic layers that evoke a sense of timeless elegance. Generous whitespace surrounds the subject, drawing the eye to the garment's silhouette. The light mode aesthetic is maintained with bright, airy tones and soft contrast." class="w-full h-auto object-cover bg-surface-container-low" data-alt="An atmospheric fashion portrait captured in an avant-garde architectural space. The model is draped in flowing, monochromatic layers that evoke a sense of timeless elegance. Generous whitespace surrounds the subject, drawing the eye to the garment's silhouette. The light mode aesthetic is maintained with bright, airy tones and soft contrast." src="https://lh3.googleusercontent.com/aida/ADBb0ugLLgZoaHkDcc4uqRh93CYEwLH0gTnkIDkRZ1lGNuq3d35HO93Ib7QvO4tALxdDyQmQgWAjKF4pt2rgsyRb_53wecCztSMOYxcHUbIQEnWhXQGxmL_dWZNP6kRl04tf0hGyWrQ5Sd6bz_kPc5PHlPPG3xhQR_BIecaWEemGb7a-E8cQHEJXrBcTyR4Vh0Os8SVzVyUaovmNUnQ2o_TlS-piD2Vtw3YlQGU0xHw3gV3LvQJFmXE0tJIucNsAsAidoW9Jnx17IEfm_w"/>
+</div>
+</div>
+<!-- Right: Minimalist Purchase Flow -->
+<div class="lg:col-span-5 lg:pl-16 flex flex-col sticky top-32 self-start h-[calc(100vh-8rem)] overflow-y-auto no-scrollbar pb-16">
+<div class="mb-12">
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-4 uppercase">The Void Trench</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">$1,250</p>
+<p class="font-body-md text-body-md text-on-background mb-8 leading-relaxed">
+                        A study in restraint. Crafted from an innovative water-resistant gabardine, this trench coat strips away traditional epaulettes and storm flaps for an uninterrupted silhouette. The hidden placket and meticulously tailored shoulders speak to a quiet, uncompromising confidence.
+                    </p>
+</div>
+<!-- Size Selection (Filter Chips style) -->
+<div class="mb-12">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label-caps text-label-caps text-on-background uppercase">Size</span>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-background transition-colors uppercase border-b border-transparent hover:border-on-background">Size Guide</button>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant font-label-caps text-label-caps text-on-background hover:border-primary transition-colors">XS</button>
+<button class="w-12 h-12 flex items-center justify-center border border-primary bg-primary font-label-caps text-label-caps text-on-primary transition-colors">S</button>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant font-label-caps text-label-caps text-on-background hover:border-primary transition-colors">M</button>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant font-label-caps text-label-caps text-on-background hover:border-primary transition-colors">L</button>
+</div>
+</div>
+<!-- Add to Bag -->
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps uppercase py-6 hover:opacity-90 transition-opacity mb-8 flex items-center justify-center gap-2">
+                    Add to Bag
+                    <span class="material-symbols-outlined text-[1rem]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Accordion Details -->
+<div class="border-t border-outline-variant pt-6 mb-6">
+<button class="w-full flex justify-between items-center font-label-caps text-label-caps text-on-background uppercase group">
+                        Details &amp; Care
+                        <span class="material-symbols-outlined group-hover:transform group-hover:rotate-180 transition-transform duration-300" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<div class="border-t border-outline-variant pt-6">
+<button class="w-full flex justify-between items-center font-label-caps text-label-caps text-on-background uppercase group">
+                        Shipping &amp; Returns
+                        <span class="material-symbols-outlined group-hover:transform group-hover:rotate-180 transition-transform duration-300" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Complete the Look (Horizontal Scroll) -->
+<section class="max-w-[1440px] mx-auto py-section-gap border-t border-outline-variant/30">
+<div class="px-margin-mobile md:px-margin-desktop mb-12 flex justify-between items-end">
+<h2 class="font-headline-md text-headline-md text-on-background uppercase">Complete the Look</h2>
+<div class="flex gap-4">
+<button aria-label="Previous" class="w-10 h-10 border border-outline-variant flex items-center justify-center hover:border-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button aria-label="Next" class="w-10 h-10 border border-outline-variant flex items-center justify-center hover:border-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex overflow-x-auto gap-8 px-margin-mobile md:px-margin-desktop no-scrollbar snap-x">
+<a class="min-w-[300px] md:min-w-[400px] flex-shrink-0 snap-start group" href="#">
+<div class="aspect-[3/4] mb-4 overflow-hidden bg-surface-container-low">
+<img alt="A minimalist fashion accessory shot in high-key studio lighting. The item is displayed purely as an object of desire against a seamless white background, emphasizing its structural elegance and premium materials. The scene is free of distraction, reflecting a quiet, refined luxury aesthetic." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A minimalist fashion accessory shot in high-key studio lighting. The item is displayed purely as an object of desire against a seamless white background, emphasizing its structural elegance and premium materials. The scene is free of distraction, reflecting a quiet, refined luxury aesthetic." src="https://lh3.googleusercontent.com/aida/ADBb0ui58_311OwWFJWO7TGxRu_rVLVYJfTzruiuINAMYG9Ovx1JqcM_pcgcbGBI0Us-slf5XyE1Bh4Jhl_vTTs1RgqKBgddjlFY9dRanDehLU472sYo1Oz8zfKL0ExkGzKfqxeGHKaWRcVF0SB9lXMWx9u5ESZLIbrmIcI8IJzgfWzGHNI0V3rCyHhQVRzR7qHT2do7j8A68ALD6X5oM1PWJqk-ti7dd9aZyG6bDXpQcI6kOjqDwa-CVaHnShVmf_3JDOITojTv5Q0_JQ"/>
+</div>
+<h3 class="font-body-md text-body-md text-on-background uppercase mb-1">Structured Tote</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">$850</p>
+</a>
+<a class="min-w-[300px] md:min-w-[400px] flex-shrink-0 snap-start group" href="#">
+<div class="aspect-[3/4] mb-4 overflow-hidden bg-surface-container-low">
+<img alt="An editorial detail image of a crisp, white poplin shirt collar and delicate silver necklace. The composition relies on vast negative space and precise framing. The light mode styling ensures everything feels immaculately clean and sophisticated, perfectly suited for a high-end digital lookbook." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="An editorial detail image of a crisp, white poplin shirt collar and delicate silver necklace. The composition relies on vast negative space and precise framing. The light mode styling ensures everything feels immaculately clean and sophisticated, perfectly suited for a high-end digital lookbook." src="https://lh3.googleusercontent.com/aida/ADBb0ujKqh7wQW1OL-TcgAKA_eXR4k7cHtMiy-2vNBbcCxwvX5SkiBYuRgVooeFK6NBdbxzqYKJN9nZ06PuMuEWWvRrhPhYvzhEiQS3XQIYQW5PqBx4cVlazh9YyTtrSI-fhCIW4mQ8m3Oi-4pi-a2jVVoEUrEa6Yo3hQH-YrY8XCx1J7b6wZM8XeWUG-RwDYpXiyZ3d-H6Qhign4sCTcpa0gj8A9YcsEhK2iUgn48pgtf6nuBVp_LyidaNWcWzSLpTsVp4621_FGMkN"/>
+</div>
+<h3 class="font-body-md text-body-md text-on-background uppercase mb-1">Poplin Overshirt</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">$320</p>
+</a>
+<a class="min-w-[300px] md:min-w-[400px] flex-shrink-0 snap-start group" href="#">
+<div class="aspect-[3/4] mb-4 overflow-hidden bg-surface-container-low">
+<img alt="A full-length fashion shot featuring wide-leg trousers that drape beautifully. The model poses against a subtle, textured grey backdrop that adds depth without disrupting the minimalist theme. The lighting is even and soft, accentuating the garment's fluid movement and impeccable cut." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A full-length fashion shot featuring wide-leg trousers that drape beautifully. The model poses against a subtle, textured grey backdrop that adds depth without disrupting the minimalist theme. The lighting is even and soft, accentuating the garment's fluid movement and impeccable cut." src="https://lh3.googleusercontent.com/aida/ADBb0ui-wTxu-32ejfxsVOIK_WfeesLD9D8LVVpH2pa0mNgwQ92ECPomw2jRR0nfgrXAMg4FlNyqUZuGbzPImY0EWUQpfpNyOyzbFUe3WIdMGO64Aw6_HHPsMynm1o2ps0-m2k5VvCQZ_ACt7rG7OAJoVYwq2M1r8l8bT4m7uxkXHyf97hThAPje0mhmY7nhsBZ8ZkxbhmgWYana1_pdBBwMOvSOUN-CtJ0NIL9TwaULr5EiLaAEUPqiAWB-8YnS8uam0K_5pFaiI9rsig"/>
+</div>
+<h3 class="font-body-md text-body-md text-on-background uppercase mb-1">Fluid Trousers</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">$450</p>
+</a>
+<a class="min-w-[300px] md:min-w-[400px] flex-shrink-0 snap-start group pr-margin-mobile md:pr-margin-desktop" href="#">
+<div class="aspect-[3/4] mb-4 overflow-hidden bg-surface-container-low">
+<img alt="A sleek, modern leather boot photographed with stark architectural lighting. The stark shadows and bright highlights emphasize the shoe's sharp silhouette and fine craftsmanship. The surrounding space is vast and stark white, creating a gallery-like presentation of the footwear." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A sleek, modern leather boot photographed with stark architectural lighting. The stark shadows and bright highlights emphasize the shoe's sharp silhouette and fine craftsmanship. The surrounding space is vast and stark white, creating a gallery-like presentation of the footwear." src="https://lh3.googleusercontent.com/aida/ADBb0ujJo66NgSRVt9wiTJGVv2kgKpu9YOPvz8rcdhK9ydpv2F3ZD-kXJ8mjcBAFpSriKtfCpYWiFmpWlqFHIIPIEkKTK90A7H__v2ZELjoR8a-xLX9ROHuifodfJc-g5bN2Y2le-t23knBy1t9k97slLQLLWkWRmDRnaijJD9PJ31MAREIRvA1kuXtfavX8Pt7401fyQsrNGmIvkqJkX7_snoH7zMmrpwUp5gmwWn9Xjp3CHuntElKzFBCeSeIlHfNWwya2KaPCfS9Lfg"/>
+</div>
+<h3 class="font-body-md text-body-md text-on-background uppercase mb-1">Architectural Boot</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">$680</p>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-zinc-200 bg-zinc-50 py-24 px-16">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<p class="font-serif text-[10px] uppercase tracking-widest text-zinc-900">© 2024 ETHEREAL MONO. SUSTAINABLY CRAFTED.</p>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-serif text-[10px] uppercase tracking-widest text-zinc-500 hover:text-zinc-900 hover:underline underline-offset-4 transition-opacity duration-300" href="#">Privacy Policy</a>
+<a class="font-serif text-[10px] uppercase tracking-widest text-zinc-500 hover:text-zinc-900 hover:underline underline-offset-4 transition-opacity duration-300" href="#">Terms of Service</a>
+<a class="font-serif text-[10px] uppercase tracking-widest text-zinc-500 hover:text-zinc-900 hover:underline underline-offset-4 transition-opacity duration-300" href="#">Shipping &amp; Returns</a>
+<a class="font-serif text-[10px] uppercase tracking-widest text-zinc-500 hover:text-zinc-900 hover:underline underline-offset-4 transition-opacity duration-300" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

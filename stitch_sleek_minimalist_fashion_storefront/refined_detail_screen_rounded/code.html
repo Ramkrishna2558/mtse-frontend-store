@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Detail - AURELIA LUXURY</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Noto+Serif:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#fcf9f8",
+                      "on-surface-variant": "#494738",
+                      "tertiary-fixed": "#e1e2ec",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#e5e2e1",
+                      "secondary-fixed": "#ffdad3",
+                      "inverse-surface": "#313030",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#756f18",
+                      "surface-tint": "#676007",
+                      "inverse-primary": "#d2c96a",
+                      "secondary": "#964735",
+                      "on-primary-fixed-variant": "#4d4800",
+                      "primary-fixed": "#efe583",
+                      "background": "#fcf9f8",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#1c1b1b",
+                      "on-tertiary-container": "#6b6c75",
+                      "surface-variant": "#e5e2e1",
+                      "on-error-container": "#93000a",
+                      "primary-container": "#fdf38f",
+                      "surface-container": "#f0eded",
+                      "tertiary": "#5c5e67",
+                      "surface-container-high": "#eae7e7",
+                      "tertiary-container": "#efeffa",
+                      "on-primary-fixed": "#1f1c00",
+                      "surface": "#fcf9f8",
+                      "on-secondary-fixed": "#3d0600",
+                      "tertiary-fixed-dim": "#c5c6d0",
+                      "primary-fixed-dim": "#d2c96a",
+                      "outline-variant": "#cbc7b3",
+                      "surface-container-low": "#f6f3f2",
+                      "on-secondary-fixed-variant": "#783021",
+                      "secondary-fixed-dim": "#ffb4a4",
+                      "on-tertiary-fixed": "#191b23",
+                      "primary": "#676007",
+                      "secondary-container": "#fd9982",
+                      "on-tertiary-fixed-variant": "#45464f",
+                      "on-background": "#1c1b1b",
+                      "inverse-on-surface": "#f3f0ef",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-container": "#762f1f",
+                      "surface-dim": "#dcd9d9",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#7a7766"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-padding": "40px",
+                      "stack-md": "24px",
+                      "gutter": "24px",
+                      "stack-sm": "12px",
+                      "unit": "8px",
+                      "stack-lg": "48px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Noto Serif"
+                      ],
+                      "headline-md": [
+                              "Noto Serif"
+                      ],
+                      "headline-lg": [
+                              "Noto Serif"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-lg text-body-lg selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-lg rounded-full mt-4 mx-auto max-w-7xl w-[95%] border border-zinc-100 dark:border-zinc-800 shadow-xl shadow-zinc-200/20 dark:shadow-none flex justify-between items-center px-8 py-3 sticky top-4 z-50">
+<!-- Mobile Menu Button (Left) -->
+<div class="md:hidden flex-1">
+<button class="p-2 text-zinc-900 dark:text-zinc-100 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+<!-- Navigation Links (Left - Desktop) -->
+<div class="hidden md:flex gap-6 flex-1">
+<a class="font-serif tracking-tight text-sm uppercase text-zinc-500 dark:text-zinc-400 font-medium hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Collections</a>
+<a class="font-serif tracking-tight text-sm uppercase text-zinc-900 dark:text-zinc-50 font-semibold border-b-2 border-zinc-900 dark:border-zinc-50 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">New Arrivals</a>
+<a class="font-serif tracking-tight text-sm uppercase text-zinc-500 dark:text-zinc-400 font-medium hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Boutiques</a>
+<a class="font-serif tracking-tight text-sm uppercase text-zinc-500 dark:text-zinc-400 font-medium hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Journal</a>
+</div>
+<!-- Brand Logo (Center) -->
+<div class="flex-shrink-0 mx-4">
+<a class="text-2xl font-serif italic tracking-tighter text-zinc-900 dark:text-zinc-50 scale-95 active:scale-90 transition-transform block text-center" href="#">
+                AURELIA
+            </a>
+</div>
+<!-- Trailing Icons (Right) -->
+<div class="flex gap-4 flex-1 justify-end">
+<button class="text-zinc-900 dark:text-zinc-100 scale-95 active:scale-90 transition-transform hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 p-2">
+<span class="material-symbols-outlined" data-icon="shopping_bag" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+</button>
+<button class="text-zinc-900 dark:text-zinc-100 scale-95 active:scale-90 transition-transform hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 p-2 hidden sm:block">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+<button class="text-zinc-900 dark:text-zinc-100 scale-95 active:scale-90 transition-transform hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 p-2 hidden sm:block">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 0;">person</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-container-padding py-stack-lg">
+<!-- Product Detail Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-stack-lg">
+<!-- Image Gallery (Left) -->
+<div class="md:col-span-7 lg:col-span-8 space-y-gutter">
+<div class="aspect-[0.67] w-full rounded-xl overflow-hidden bg-surface-container shadow-sm">
+<img alt="A high-fashion editorial shot of a luxurious, fluid garment in a light, serene setting. The piece is draped elegantly on a model, showcasing its soft, minimalist design. The lighting is diffused and bright, creating a structured calm atmosphere with extreme rounded edges in the styling. The overall aesthetic is ethereal, modern, and monochromatic with subtle tonal layers." class="w-full h-full object-cover" data-alt="A high-fashion editorial shot of a luxurious, fluid garment in a light, serene setting. The piece is draped elegantly on a model, showcasing its soft, minimalist design. The lighting is diffused and bright, creating a structured calm atmosphere with extreme rounded edges in the styling. The overall aesthetic is ethereal, modern, and monochromatic with subtle tonal layers." src="https://lh3.googleusercontent.com/aida/ADBb0ui1G14OFRlfytdQUtvBkaOx0PkHWnQw9B1KMCPHnr9Oz-0BD33RAEmL2L-ezdeCXabky8zqYWPz0lu4nQ_xeXW8utYwiWBHj94fEB6LZaBBsyACMQQpmXmSEbR5cZ1B5Z4J4SNcYl6MXqrNyktxviF36_PDDneU0pQZtZ54NN8Dns4ErL6tfoP85fNlcDtwsvmuf_Le5aOmNk7-TNqvGkelqaXX6DFOhaft2XcB-0UwZ6I_rt11ocmlYt5pMrrEyZ0Sx0G7iIM2"/>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container shadow-sm">
+<img alt="A close-up macro shot detailing the rich texture and fine craftsmanship of the luxurious fabric. The organic geometry and soft minimalism are evident in the weave. Bright, diffused lighting highlights the premium quality and ethereal mood, maintaining the light-mode, structured calm aesthetic." class="w-full h-full object-cover" data-alt="A close-up macro shot detailing the rich texture and fine craftsmanship of the luxurious fabric. The organic geometry and soft minimalism are evident in the weave. Bright, diffused lighting highlights the premium quality and ethereal mood, maintaining the light-mode, structured calm aesthetic." src="https://lh3.googleusercontent.com/aida/ADBb0uhNW_45jBgJ0rtHpLI6QQKMOHDT9dQRkubrVAsMhIhkr-eTX916hgid3sPd50-oTOaJTZkRuW6-J-zRyvb6zyb-mVtgm5YEBYyt_B0m4WxQeG0JD90KKbxtl-3Sq1lJl-xGcQD5LJdOmX_fKwH_bGTY53ZhFRMc-h7eNMfndZjaLo6ihflo3Ti5YkoQEMbpGp68UOX0piikKDndUqLf5o83LSdi_E-zgPr0pR8PSXUkv39ptUw9cNSCm0-NsH4c4qODTGbnif8Irw"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container shadow-sm">
+<img alt="Another detailed view of the garment, focusing on the organic, fluid silhouette and how it interacts with the light. The setting remains pristine and minimalist, with a high-key, soft white lighting that emphasizes the high-end editorial clarity and modern geometric approach." class="w-full h-full object-cover" data-alt="Another detailed view of the garment, focusing on the organic, fluid silhouette and how it interacts with the light. The setting remains pristine and minimalist, with a high-key, soft white lighting that emphasizes the high-end editorial clarity and modern geometric approach." src="https://lh3.googleusercontent.com/aida/ADBb0ugLLgZoaHkDcc4uqRh93CYEwLH0gTnkIDkRZ1lGNuq3d35HO93Ib7QvO4tALxdDyQmQgWAjKF4pt2rgsyRb_53wecCztSMOYxcHUbIQEnWhXQGxmL_dWZNP6kRl04tf0hGyWrQ5Sd6bz_kPc5PHlPPG3xhQR_BIecaWEemGb7a-E8cQHEJXrBcTyR4Vh0Os8SVzVyUaovmNUnQ2o_TlS-piD2Vtw3YlQGU0xHw3gV3LvQJFmXE0tJIucNsAsAidoW9Jnx17IEfm_w"/>
+</div>
+</div>
+</div>
+<!-- Product Info (Right) -->
+<div class="md:col-span-5 lg:col-span-4 sticky top-32 self-start space-y-stack-md pt-8 md:pt-0">
+<div class="space-y-unit">
+<div class="flex items-center gap-2 mb-2">
+<span class="inline-block px-3 py-1 bg-tertiary-container text-on-tertiary-container font-label-caps text-label-caps rounded-full">New Arrival</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface">The Ethereal Silk Drape</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant">$850.00</p>
+</div>
+<p class="font-body-md text-body-md text-outline">A masterclass in soft minimalism. This piece is crafted from fluid silk, designed to move like water. The silhouette is organic and approachable, yet maintains a high-end editorial clarity. Perfect for establishing a sense of structured calm in any sophisticated wardrobe.</p>
+<hr class="border-outline-variant/30"/>
+<!-- Color Selection -->
+<div class="space-y-unit">
+<span class="font-label-caps text-label-caps text-on-surface">Color: Ivory</span>
+<div class="flex gap-3">
+<button aria-label="Select Ivory" class="w-8 h-8 rounded-full bg-[#F5F5F0] border border-outline-variant focus:ring-2 focus:ring-primary-container focus:outline-none transition-all"></button>
+<button aria-label="Select Onyx" class="w-8 h-8 rounded-full bg-[#2C2C2C] border border-transparent focus:ring-2 focus:ring-primary-container focus:outline-none transition-all"></button>
+<button aria-label="Select Taupe" class="w-8 h-8 rounded-full bg-[#B0A9A3] border border-transparent focus:ring-2 focus:ring-primary-container focus:outline-none transition-all"></button>
+</div>
+</div>
+<!-- Size Selection -->
+<div class="space-y-unit">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface">Size</span>
+<a class="font-label-caps text-label-caps text-on-surface-variant underline underline-offset-4" href="#">Size Guide</a>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="py-2 border border-outline-variant rounded-full font-label-caps text-label-caps text-on-surface hover:border-primary focus:border-primary focus:bg-primary-container focus:text-on-primary-container transition-all">XS</button>
+<button class="py-2 border border-outline-variant rounded-full font-label-caps text-label-caps text-on-surface hover:border-primary focus:border-primary focus:bg-primary-container focus:text-on-primary-container transition-all">S</button>
+<button class="py-2 border border-primary bg-primary-container text-on-primary-container rounded-full font-label-caps text-label-caps transition-all">M</button>
+<button class="py-2 border border-outline-variant rounded-full font-label-caps text-label-caps text-on-surface hover:border-primary focus:border-primary focus:bg-primary-container focus:text-on-primary-container transition-all">L</button>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-4 space-y-4">
+<button class="w-full py-4 bg-secondary-container text-on-secondary-container rounded-full font-label-caps text-label-caps hover:bg-secondary hover:text-on-secondary transition-colors duration-300 flex items-center justify-center gap-2">
+<span>Add to Bag</span>
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</button>
+<button class="w-full py-4 bg-surface text-on-surface border border-outline-variant rounded-full font-label-caps text-label-caps hover:bg-surface-container transition-colors duration-300 flex items-center justify-center gap-2">
+<span>Save to Favorites</span>
+<span class="material-symbols-outlined text-[18px]">favorite_border</span>
+</button>
+</div>
+<!-- Accordions -->
+<div class="pt-8 space-y-4">
+<details class="group border-b border-outline-variant/30 pb-4">
+<summary class="flex justify-between items-center font-headline-sm text-on-surface cursor-pointer list-none [&amp;::-webkit-details-marker]:hidden">
+                            Details &amp; Fit
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-4 font-body-md text-body-md text-outline">
+<ul class="list-disc pl-5 space-y-1">
+<li>Fluid, relaxed fit</li>
+<li>Dropped shoulders</li>
+<li>Side slit details</li>
+<li>Model is 5'10" wearing size M</li>
+</ul>
+</div>
+</details>
+<details class="group border-b border-outline-variant/30 pb-4">
+<summary class="flex justify-between items-center font-headline-sm text-on-surface cursor-pointer list-none [&amp;::-webkit-details-marker]:hidden">
+                            Materials &amp; Care
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-4 font-body-md text-body-md text-outline">
+<p>100% Mulberry Silk. Dry clean only. Do not bleach. Iron on low heat.</p>
+</div>
+</details>
+<details class="group border-b border-outline-variant/30 pb-4">
+<summary class="flex justify-between items-center font-headline-sm text-on-surface cursor-pointer list-none [&amp;::-webkit-details-marker]:hidden">
+                            Shipping &amp; Returns
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-4 font-body-md text-body-md text-outline">
+<p>Complimentary express shipping on all orders. Returns accepted within 14 days of delivery in original condition.</p>
+</div>
+</details>
+</div>
+</div>
+</section>
+<!-- Complete the Look Section -->
+<section class="py-stack-lg border-t border-outline-variant/20">
+<div class="flex justify-between items-end mb-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Complete the Look</h2>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface underline underline-offset-4 hidden sm:block" href="#">View Collection</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[0.8] rounded-xl overflow-hidden bg-surface-container mb-4 relative">
+<img alt="A sleek, minimalist accessory piece displayed against a bright, softly lit background. The geometric shape is softened by extreme rounded corners, fitting perfectly into the structured calm aesthetic. The color palette is strictly neutral with a subtle tonal layer for depth." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A sleek, minimalist accessory piece displayed against a bright, softly lit background. The geometric shape is softened by extreme rounded corners, fitting perfectly into the structured calm aesthetic. The color palette is strictly neutral with a subtle tonal layer for depth." src="https://lh3.googleusercontent.com/aida/ADBb0ui58_311OwWFJWO7TGxRu_rVLVYJfTzruiuINAMYG9Ovx1JqcM_pcgcbGBI0Us-slf5XyE1Bh4Jhl_vTTs1RgqKBgddjlFY9dRanDehLU472sYo1Oz8zfKL0ExkGzKfqxeGHKaWRcVF0SB9lXMWx9u5ESZLIbrmIcI8IJzgfWzGHNI0V3rCyHhQVRzR7qHT2do7j8A68ALD6X5oM1PWJqk-ti7dd9aZyG6bDXpQcI6kOjqDwa-CVaHnShVmf_3JDOITojTv5Q0_JQ"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-on-surface hover:bg-white transition-colors opacity-0 group-hover:opacity-100 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+</div>
+<div class="text-center space-y-1">
+<h3 class="font-body-lg text-body-lg text-on-surface">Structured Tote</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">$450.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[0.8] rounded-xl overflow-hidden bg-surface-container mb-4 relative">
+<img alt="Minimalist footwear featuring clean lines and organic curves. The item is set against an ethereal, light-mode environment with high-key lighting. The presentation highlights the brand's soft minimalism and high-end editorial feel, utilizing subtle tonal shifts rather than heavy shadows." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Minimalist footwear featuring clean lines and organic curves. The item is set against an ethereal, light-mode environment with high-key lighting. The presentation highlights the brand's soft minimalism and high-end editorial feel, utilizing subtle tonal shifts rather than heavy shadows." src="https://lh3.googleusercontent.com/aida/ADBb0ui-wTxu-32ejfxsVOIK_WfeesLD9D8LVVpH2pa0mNgwQ92ECPomw2jRR0nfgrXAMg4FlNyqUZuGbzPImY0EWUQpfpNyOyzbFUe3WIdMGO64Aw6_HHPsMynm1o2ps0-m2k5VvCQZ_ACt7rG7OAJoVYwq2M1r8l8bT4m7uxkXHyf97hThAPje0mhmY7nhsBZ8ZkxbhmgWYana1_pdBBwMOvSOUN-CtJ0NIL9TwaULr5EiLaAEUPqiAWB-8YnS8uam0K_5pFaiI9rsig"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-on-surface hover:bg-white transition-colors opacity-0 group-hover:opacity-100 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+</div>
+<div class="text-center space-y-1">
+<h3 class="font-body-lg text-body-lg text-on-surface">Curved Mule</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">$380.00</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[0.8] rounded-xl overflow-hidden bg-surface-container mb-4 relative">
+<img alt="A delicate piece of jewelry designed with organic, fluid geometry. The bright, pristine setting emphasizes the structured calm of the design system. The item is perfectly centered, capturing a sense of modern wellness and high-fashion clarity within a monochromatic light theme." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A delicate piece of jewelry designed with organic, fluid geometry. The bright, pristine setting emphasizes the structured calm of the design system. The item is perfectly centered, capturing a sense of modern wellness and high-fashion clarity within a monochromatic light theme." src="https://lh3.googleusercontent.com/aida/ADBb0ujJo66NgSRVt9wiTJGVv2kgKpu9YOPvz8rcdhK9ydpv2F3ZD-kXJ8mjcBAFpSriKtfCpYWiFmpWlqFHIIPIEkKTK90A7H__v2ZELjoR8a-xLX9ROHuifodfJc-g5bN2Y2le-t23knBy1t9k97slLQLLWkWRmDRnaijJD9PJ31MAREIRvA1kuXtfavX8Pt7401fyQsrNGmIvkqJkX7_snoH7zMmrpwUp5gmwWn9Xjp3CHuntElKzFBCeSeIlHfNWwya2KaPCfS9Lfg"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-on-surface hover:bg-white transition-colors opacity-0 group-hover:opacity-100 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+</div>
+<div class="text-center space-y-1">
+<h3 class="font-body-lg text-body-lg text-on-surface">Drop Pendant</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">$220.00</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group cursor-pointer sm:hidden lg:block">
+<div class="aspect-[0.8] rounded-xl overflow-hidden bg-surface-container mb-4 relative">
+<img alt="A subtle, high-end lifestyle accessory that complements the main garment. It rests on a pale, seamless surface, bathed in bright, soft light. The visual style is strictly soft minimalism, using heavy whitespace and high-roundness shapes to maintain an ethereal, airy atmosphere." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A subtle, high-end lifestyle accessory that complements the main garment. It rests on a pale, seamless surface, bathed in bright, soft light. The visual style is strictly soft minimalism, using heavy whitespace and high-roundness shapes to maintain an ethereal, airy atmosphere." src="https://lh3.googleusercontent.com/aida/ADBb0ujKqh7wQW1OL-TcgAKA_eXR4k7cHtMiy-2vNBbcCxwvX5SkiBYuRgVooeFK6NBdbxzqYKJN9nZ06PuMuEWWvRrhPhYvzhEiQS3XQIYQW5PqBx4cVlazh9YyTtrSI-fhCIW4mQ8m3Oi-4pi-a2jVVoEUrEa6Yo3hQH-YrY8XCx1J7b6wZM8XeWUG-RwDYpXiyZ3d-H6Qhign4sCTcpa0gj8A9YcsEhK2iUgn48pgtf6nuBVp_LyidaNWcWzSLpTsVp4621_FGMkN"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-on-surface hover:bg-white transition-colors opacity-0 group-hover:opacity-100 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+</div>
+<div class="text-center space-y-1">
+<h3 class="font-body-lg text-body-lg text-on-surface">Silk Scarf</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">$150.00</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-50 dark:bg-zinc-950 rounded-t-[48px] mt-20 flex flex-col items-center gap-8 py-16 px-4 w-full">
+<!-- Brand Logo -->
+<div class="text-xl font-serif italic text-zinc-900 dark:text-zinc-50 opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+            AURELIA
+        </div>
+<!-- Links -->
+<div class="flex flex-wrap justify-center gap-6 md:gap-8">
+<a class="font-serif text-xs tracking-widest uppercase text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 opacity-80 hover:opacity-100 transition-opacity" href="#">Sustainability</a>
+<a class="font-serif text-xs tracking-widest uppercase text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 opacity-80 hover:opacity-100 transition-opacity" href="#">Shipping</a>
+<a class="font-serif text-xs tracking-widest uppercase text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 opacity-80 hover:opacity-100 transition-opacity" href="#">Care Guide</a>
+<a class="font-serif text-xs tracking-widest uppercase text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy</a>
+<a class="font-serif text-xs tracking-widest uppercase text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 opacity-80 hover:opacity-100 transition-opacity" href="#">Terms</a>
+</div>
+<!-- Copyright -->
+<div class="font-serif text-xs tracking-widest uppercase text-zinc-500 dark:text-zinc-400 mt-4 text-center opacity-60">
+            © 2024 AURELIA LUXURY. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>

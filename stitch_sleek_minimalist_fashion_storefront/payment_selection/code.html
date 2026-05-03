@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Method</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Noto+Serif:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#e2e3e1",
+                        "secondary-container": "#e3e2e2",
+                        "on-primary-fixed-variant": "#474747",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#1b1b1b",
+                        "surface-container": "#eeeeee",
+                        "surface": "#f9f9f9",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-surface": "#1a1c1c",
+                        "background": "#f9f9f9",
+                        "on-primary-container": "#848484",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-background": "#1a1c1c",
+                        "secondary": "#5e5e5e",
+                        "primary-fixed": "#e2e2e2",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454746",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-surface-variant": "#4c4546",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-tertiary-fixed": "#1a1c1b",
+                        "surface-container-low": "#f3f3f4",
+                        "inverse-surface": "#2f3131",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-tint": "#5e5e5e",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary-container": "#646464",
+                        "tertiary-container": "#1a1c1b",
+                        "surface-dim": "#dadada",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#cfc4c5",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#000000",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c6c7c5",
+                        "tertiary": "#000000",
+                        "on-tertiary-container": "#838483",
+                        "on-secondary-fixed-variant": "#464747",
+                        "error": "#ba1a1a",
+                        "outline": "#7e7576",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-highest": "#e2e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "128px",
+                        "margin-desktop": "64px",
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Noto Serif"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["4.5rem", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-md": ["1rem", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["0.75rem", { "lineHeight": "1.2", "letterSpacing": "0.15em", "fontWeight": "500" }],
+                        "headline-md": ["2rem", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "headline-lg": ["3rem", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "body-lg": ["1.125rem", { "lineHeight": "1.7", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface-container-lowest text-on-surface min-h-screen flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-stone-950 text-black dark:text-white docked full-width top-0 border-b border-stone-200 dark:border-stone-800 rounded-none z-50 sticky">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button aria-label="Go back" class="hover:opacity-60 transition-opacity duration-300 flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-black dark:text-white">arrow_back</span>
+</button>
+</div>
+<div class="font-serif text-lg tracking-widest text-black dark:text-white absolute left-1/2 -translate-x-1/2">
+                PAYMENT
+            </div>
+<div class="flex items-center gap-4">
+<button aria-label="shopping_bag" class="hover:opacity-60 transition-opacity duration-300 flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-black dark:text-white">shopping_bag</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center px-margin-mobile md:px-margin-desktop py-section-gap w-full max-w-container-max mx-auto">
+<div class="w-full max-w-[600px] flex flex-col gap-12">
+<div class="flex flex-col gap-4 text-center mb-8">
+<h1 class="font-headline-md text-headline-md text-primary">Payment Method</h1>
+<p class="font-body-md text-body-md text-secondary">Please select your preferred payment option.</p>
+</div>
+<!-- Payment Methods List -->
+<div class="flex flex-col gap-4">
+<!-- Card 1 (Selected) -->
+<button class="w-full flex items-center justify-between p-6 bg-surface-container-lowest border border-primary relative cursor-pointer group transition-all duration-300">
+<div class="flex items-center gap-6">
+<div class="w-12 h-8 bg-surface-container flex items-center justify-center border border-outline-variant">
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider text-[10px]">VISA</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="font-body-md text-body-md text-primary">Visa ending in 4242</span>
+<span class="font-label-caps text-label-caps text-secondary uppercase text-[10px] mt-1">Expires 12/25</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<!-- Card 2 -->
+<button class="w-full flex items-center justify-between p-6 bg-surface-container-lowest border border-outline-variant hover:border-primary/30 relative cursor-pointer group transition-all duration-300">
+<div class="flex items-center gap-6">
+<div class="w-12 h-8 bg-surface-container flex items-center justify-center border border-outline-variant">
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider text-[10px]">MC</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="font-body-md text-body-md text-on-surface">Mastercard ending in 8888</span>
+<span class="font-label-caps text-label-caps text-secondary uppercase text-[10px] mt-1">Expires 08/26</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary/30 transition-colors">radio_button_unchecked</span>
+</button>
+<!-- Card 3 -->
+<button class="w-full flex items-center justify-between p-6 bg-surface-container-lowest border border-outline-variant hover:border-primary/30 relative cursor-pointer group transition-all duration-300">
+<div class="flex items-center gap-6">
+<div class="w-12 h-8 bg-surface-container flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface text-[18px]">account_balance_wallet</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="font-body-md text-body-md text-on-surface">Apple Pay</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary/30 transition-colors">radio_button_unchecked</span>
+</button>
+</div>
+<!-- Add New Payment Method -->
+<button class="flex items-center gap-2 self-start group mt-4">
+<span class="material-symbols-outlined text-primary text-sm transition-transform group-hover:rotate-90 duration-300">add</span>
+<span class="font-label-caps text-label-caps text-primary uppercase border-b border-transparent group-hover:border-primary transition-colors duration-300">Add New Payment Method</span>
+</button>
+<!-- Order Summary & Action -->
+<div class="mt-12 flex flex-col gap-8 pt-8 border-t border-outline-variant/30">
+<div class="flex justify-between items-end">
+<span class="font-body-md text-body-md text-secondary">Total Amount</span>
+<span class="font-headline-md text-headline-md text-primary">$1,250.00</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-5 px-8 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary/90 transition-colors duration-300 flex justify-center items-center gap-4">
+                    Confirm Payment
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Decorative Image Elements (Hidden on very small screens to maintain focus) -->
+<div class="hidden lg:block fixed right-0 top-1/2 -translate-y-1/2 translate-x-1/3 opacity-5 pointer-events-none w-96 h-96">
+<img alt="A high-fashion, minimalist abstract composition with strong geometric shadows and bright white light. The texture is smooth and premium." class="w-full h-full object-cover mix-blend-multiply" data-alt="A high-fashion, minimalist abstract composition with strong geometric shadows and bright white light. The texture is smooth and premium, conveying quiet confidence and luxury." src="https://lh3.googleusercontent.com/aida/ADBb0ujKqh7wQW1OL-TcgAKA_eXR4k7cHtMiy-2vNBbcCxwvX5SkiBYuRgVooeFK6NBdbxzqYKJN9nZ06PuMuEWWvRrhPhYvzhEiQS3XQIYQW5PqBx4cVlazh9YyTtrSI-fhCIW4mQ8m3Oi-4pi-a2jVVoEUrEa6Yo3hQH-YrY8XCx1J7b6wZM8XeWUG-RwDYpXiyZ3d-H6Qhign4sCTcpa0gj8A9YcsEhK2iUgn48pgtf6nuBVp_LyidaNWcWzSLpTsVp4621_FGMkN"/>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-50 dark:bg-stone-900 rounded-none border-t border-stone-200 dark:border-stone-800 w-full py-12 px-8 flex flex-col items-center gap-8 mt-auto transition-all duration-300">
+<div class="flex flex-col items-center gap-6">
+<div class="font-serif text-sm tracking-widest text-black dark:text-white">PAYMENT</div>
+<div class="flex gap-6">
+<a class="text-stone-500 dark:text-stone-400 font-serif text-[10px] tracking-wider uppercase hover:underline decoration-1 underline-offset-4" href="#">Privacy Policy</a>
+<a class="text-stone-500 dark:text-stone-400 font-serif text-[10px] tracking-wider uppercase hover:underline decoration-1 underline-offset-4" href="#">Terms of Service</a>
+<a class="text-stone-500 dark:text-stone-400 font-serif text-[10px] tracking-wider uppercase hover:underline decoration-1 underline-offset-4" href="#">Contact</a>
+</div>
+<div class="text-stone-500 dark:text-stone-400 font-serif text-[10px] tracking-wider uppercase mt-4">
+                © 2024 LUXE EDITORIAL. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+</body></html>

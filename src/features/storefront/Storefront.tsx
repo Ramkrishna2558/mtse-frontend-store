@@ -6,31 +6,32 @@ import { ProductCard } from '../../components/ProductCard';
 import { OrderHistory } from './OrderHistory';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from '../../components/common/Snackbar';
+import { useStore } from '../../stores/useStore';
 import type { ProductDto, AddressDto, OrderDto } from '../../../../mtse-shared/src/types';
 
 export const Storefront: React.FC = () => {
-  const { platformConfig, allProducts, categories, getStoreInfo, isLoading } = useConfig();
-  const { customerEmail, isAuthenticated, logout } = useCustomerAuth();
+  const { platformConfig, allProducts, categories, isLoading } = useConfig();
+  const { customerEmail, isAuthenticated } = useCustomerAuth();
   const navigate = useNavigate();
   const { showSnackbar } = useSnackbar();
 
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  // Use global store
+  const { 
+    searchTerm, 
+    selectedCategory, 
+    setSelectedCategory,
+    cart, 
+    addToCart, 
+    clearCart,
+    isCartOpen, 
+    setIsCartOpen,
+    showHistory, 
+    setShowHistory
+  } = useStore();
+
   const [sortBy, setSortBy] = useState<'relevance' | 'price_asc' | 'price_desc' | 'newest'>('relevance');
-  const [priceRange, setPriceRange] = useState<[number, number]>([Math.max(), 200000]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 200000]);
 
-  // Cart & Checkout
-  const [cart, setCart] = useState<{ product: ProductDto, quantity: number }[]>(() => {
-    const saved = localStorage.getItem('mtse_cart');
-    return saved ? JSON.parse(saved) : [];
-  });
-
-  React.useEffect(() => {
-    localStorage.setItem('mtse_cart', JSON.stringify(cart));
-  }, [cart]);
-
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const [showHistory, setShowHistory] = useState(false);
   const [checkoutForm, setCheckoutForm] = useState({
     flatNo: '',
     floor: '',
@@ -40,13 +41,7 @@ export const Storefront: React.FC = () => {
   });
 
   const handleAddToCart = (product: ProductDto) => {
-    setCart(prev => {
-      const existing = prev.find(item => item.product.id === product.id);
-      if (existing) {
-        return prev.map(item => item.product.id === product.id ? { ...item, quantity: item.quantity + 1 } : item);
-      }
-      return [...prev, { product, quantity: 1 }];
-    });
+    addToCart(product);
     showSnackbar(`${product.name} added to cart!`, 'success');
   };
 
@@ -67,12 +62,11 @@ export const Storefront: React.FC = () => {
       floor: checkoutForm.floor,
       street: checkoutForm.street,
       pinCode: checkoutForm.pinCode,
-      city: 'Mumbai', // Default for demo
-      state: 'Maharashtra' // Default for demo
+      city: 'Mumbai',
+      state: 'Maharashtra'
     };
 
     try {
-      // Group orders by store (tenantId)
       const ordersByTenant: Record<string, any> = {};
       cart.forEach(item => {
         const tId = item.product.tenantId;
@@ -106,10 +100,10 @@ export const Storefront: React.FC = () => {
       }
 
       showSnackbar("Order placed successfully! 🎉", 'success');
-      setCart([]);
+      clearCart();
       setIsCartOpen(false);
       setCheckoutForm({ flatNo: '', floor: '', street: '', pinCode: '', phoneNo: '' });
-      setShowHistory(true); // Show history after placing order
+      setShowHistory(true);
     } catch (err) {
       console.error("Checkout failed", err);
       showSnackbar("Checkout failed. Please try again.", 'error');
@@ -159,114 +153,6 @@ export const Storefront: React.FC = () => {
 
   return (
     <div style={{ minHeight: '100vh', background: '#f5f5f7', color: '#1a1a2e', fontFamily: "'Inter', sans-serif" }}>
-
-      {/* ===== TOP BAR ===== */}
-      <div style={{ background: '#1a1a2e', color: 'white', fontSize: '0.75rem', padding: '6px 5%', display: 'flex', justifyContent: 'space-between' }}>
-        <span>🚚 Free shipping on orders above ₹500</span>
-        <span>📞 24/7 Customer Support</span>
-      </div>
-
-      {/* ===== HEADER ===== */}
-      <header style={{ background: 'white', padding: '0 5%', boxShadow: '0 1px 8px rgba(0,0,0,0.06)', position: 'sticky', top: 0, zIndex: 100 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', padding: '12px 0' }}>
-          {/* Logo */}
-          <h1 style={{ margin: 0, fontSize: '1.4rem', fontWeight: 800, color: '#ff6b35', whiteSpace: 'nowrap' }}>
-            {platformConfig.platformName}
-          </h1>
-
-          {/* Search Bar */}
-          <div style={{ flex: 1, maxWidth: '600px', position: 'relative' }}>
-            <input
-              type="text"
-              placeholder="Search products, brands and more..."
-              value={searchTerm}
-              onChange={e => setSearchTerm(e.target.value)}
-              style={{
-                width: '100%',
-                padding: '10px 16px 10px 40px',
-                border: '2px solid #eee',
-                borderRadius: '8px',
-                fontSize: '0.9rem',
-                outline: 'none',
-                transition: 'border-color 0.2s',
-              }}
-              onFocus={e => { e.currentTarget.style.borderColor = '#ff6b35'; }}
-              onBlur={e => { e.currentTarget.style.borderColor = '#eee'; }}
-            />
-            <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', fontSize: '1rem', opacity: 0.4 }}>🔍</span>
-          </div>
-
-          {/* Auth + Cart */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', whiteSpace: 'nowrap' }}>
-            {isAuthenticated ? (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                <div style={{ textAlign: 'right' }}>
-                  <div style={{ fontSize: '0.7rem', color: '#999' }}>Welcome</div>
-                  <div style={{ fontSize: '0.85rem', fontWeight: 600 }}>{customerEmail?.split('@')[0]}</div>
-                </div>
-                <button onClick={logout} style={{ background: 'none', border: '1px solid #ddd', padding: '6px 12px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.8rem' }}>Logout</button>
-              </div>
-            ) : (
-              <button onClick={() => navigate('/login')} style={{ background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem', color: '#1a1a2e' }}>
-                <div style={{ fontSize: '0.7rem', color: '#999' }}>Hello, Sign in</div>
-                <div>Account</div>
-              </button>
-            )}
-            <button onClick={() => setIsCartOpen(true)} style={{ display: 'flex', alignItems: 'center', gap: '6px', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem', position: 'relative' }}>
-              <span style={{ fontSize: '1.3rem' }}>🛒</span>
-              <span>Cart</span>
-              {cart.length > 0 && (
-                <span style={{ position: 'absolute', top: '-6px', right: '-10px', background: '#ff6b35', color: 'white', fontSize: '0.65rem', fontWeight: 700, width: '18px', height: '18px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  {cart.reduce((sum, item) => sum + item.quantity, 0)}
-                </span>
-              )}
-            </button>
-          </div>
-        </div>
-
-        {/* Category Nav */}
-        <nav style={{ borderTop: '1px solid #f0f0f0', padding: '8px 0', display: 'flex', gap: '0.5rem', overflowX: 'auto', alignItems: 'center' }}>
-          <button
-            onClick={() => { setSelectedCategory(null); setShowHistory(false); }}
-            style={{
-              padding: '6px 16px', borderRadius: '20px', border: 'none', fontSize: '0.8rem', fontWeight: 600, cursor: 'pointer',
-              background: !selectedCategory && !showHistory ? '#1a1a2e' : 'transparent',
-              color: !selectedCategory && !showHistory ? 'white' : '#555',
-              transition: 'all 0.2s'
-            }}
-          >
-            All Products
-          </button>
-          {categories.map(cat => (
-            <button
-              key={cat}
-              onClick={() => { setSelectedCategory(cat); setShowHistory(false); }}
-              style={{
-                padding: '6px 16px', borderRadius: '20px', border: 'none', fontSize: '0.8rem', fontWeight: 600, cursor: 'pointer',
-                background: selectedCategory === cat ? '#1a1a2e' : 'transparent',
-                color: selectedCategory === cat ? 'white' : '#555',
-                transition: 'all 0.2s'
-              }}
-            >
-              {cat}
-            </button>
-          ))}
-          {isAuthenticated && (
-            <button
-              onClick={() => setShowHistory(true)}
-              style={{
-                padding: '6px 16px', borderRadius: '20px', border: 'none', fontSize: '0.8rem', fontWeight: 600, cursor: 'pointer',
-                background: showHistory ? '#ff6b35' : 'transparent',
-                color: showHistory ? 'white' : '#555',
-                transition: 'all 0.2s',
-                marginLeft: 'auto'
-              }}
-            >
-              📜 My Orders
-            </button>
-          )}
-        </nav>
-      </header>
 
       {/* ===== HERO BANNER ===== */}
       {!searchTerm && !selectedCategory && (
@@ -394,77 +280,6 @@ export const Storefront: React.FC = () => {
         </div>
       </footer>
 
-      {/* Cart Modal */}
-      {isCartOpen && (
-        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', display: 'flex', justifyContent: 'flex-end', zIndex: 1000 }}>
-          <div style={{ width: '100%', maxWidth: '400px', background: 'white', height: '100%', display: 'flex', flexDirection: 'column', boxShadow: '-5px 0 15px rgba(0,0,0,0.1)' }}>
-            <div style={{ padding: '1.5rem', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <h2 style={{ margin: 0, fontSize: '1.4rem' }}>Your Cart</h2>
-              <button onClick={() => setIsCartOpen(false)} style={{ background: 'none', border: 'none', fontSize: '1.2rem', cursor: 'pointer' }}>✖</button>
-            </div>
-
-            <div style={{ flex: 1, overflowY: 'auto', padding: '1.5rem' }}>
-              {cart.length === 0 ? (
-                <p style={{ textAlign: 'center', color: '#888', marginTop: '2rem' }}>Your cart is empty.</p>
-              ) : (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  {cart.map((item, idx) => (
-                    <div key={idx} style={{ display: 'flex', gap: '1rem', borderBottom: '1px solid #eee', paddingBottom: '1rem' }}>
-                      <img src={item.product.images?.[0] || 'https://via.placeholder.com/60'} alt={item.product.name} style={{ width: '60px', height: '60px', objectFit: 'cover', borderRadius: '4px' }} />
-                      <div style={{ flex: 1 }}>
-                        <h4 style={{ margin: '0 0 4px 0', fontSize: '0.9rem' }}>{item.product.name}</h4>
-                        <div style={{ fontSize: '0.8rem', color: '#666' }}>Store: {item.product.tenantId}</div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '8px', fontSize: '0.9rem', fontWeight: 'bold' }}>
-                          <span>Qty: {item.quantity}</span>
-                          <span>₹{item.product.price * item.quantity}</span>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {cart.length > 0 && (
-              <div style={{ padding: '1.5rem', borderTop: '1px solid #eee', background: '#fafafa' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', fontSize: '1.2rem', fontWeight: 'bold' }}>
-                  <span>Total:</span>
-                  <span>₹{cart.reduce((sum, item) => sum + (item.product.price * item.quantity), 0)}</span>
-                </div>
-                <form onSubmit={handleCheckout} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  <div style={{ display: 'flex', gap: '0.5rem' }}>
-                    <label style={{ flex: 1, fontSize: '0.85rem', fontWeight: 600 }}>
-                      Flat / House No:
-                      <input required value={checkoutForm.flatNo} onChange={e => setCheckoutForm({ ...checkoutForm, flatNo: e.target.value })} style={{ width: '100%', padding: '8px', marginTop: '4px', border: '1px solid #ccc', borderRadius: '4px', boxSizing: 'border-box' }} />
-                    </label>
-                    <label style={{ flex: 1, fontSize: '0.85rem', fontWeight: 600 }}>
-                      Floor (Optional):
-                      <input value={checkoutForm.floor} onChange={e => setCheckoutForm({ ...checkoutForm, floor: e.target.value })} style={{ width: '100%', padding: '8px', marginTop: '4px', border: '1px solid #ccc', borderRadius: '4px', boxSizing: 'border-box' }} />
-                    </label>
-                  </div>
-                  <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>
-                    Street / Area / Colony:
-                    <textarea required value={checkoutForm.street} onChange={e => setCheckoutForm({ ...checkoutForm, street: e.target.value })} placeholder="Area, Street, Landmark" style={{ width: '100%', padding: '8px', marginTop: '4px', border: '1px solid #ccc', borderRadius: '4px', resize: 'vertical', minHeight: '60px', boxSizing: 'border-box' }} />
-                  </label>
-                  <div style={{ display: 'flex', gap: '0.5rem' }}>
-                    <label style={{ flex: 1, fontSize: '0.85rem', fontWeight: 600 }}>
-                      PIN Code:
-                      <input required type="text" pattern="[0-9]{6}" value={checkoutForm.pinCode} onChange={e => setCheckoutForm({ ...checkoutForm, pinCode: e.target.value })} placeholder="6-digit PIN" style={{ width: '100%', padding: '8px', marginTop: '4px', border: '1px solid #ccc', borderRadius: '4px', boxSizing: 'border-box' }} />
-                    </label>
-                    <label style={{ flex: 1, fontSize: '0.85rem', fontWeight: 600 }}>
-                      Mobile Number:
-                      <input required type="tel" pattern="[0-9]{10}" value={checkoutForm.phoneNo} onChange={e => setCheckoutForm({ ...checkoutForm, phoneNo: e.target.value })} placeholder="10-digit Mobile" style={{ width: '100%', padding: '8px', marginTop: '4px', border: '1px solid #ccc', borderRadius: '4px', boxSizing: 'border-box' }} />
-                    </label>
-                  </div>
-                  <button type="submit" style={{ background: '#ff6b35', color: 'white', border: 'none', padding: '12px', borderRadius: '8px', fontSize: '1rem', fontWeight: 'bold', cursor: 'pointer', marginTop: '0.5rem' }}>
-                    Confirm & Place Order
-                  </button>
-                </form>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </div>
   );
 };

@@ -1,17 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-
-function HomePage() {
-  return (
-    <div>
-      <h1>Store Home</h1>
-      <p>Welcome to the MTSE Storefront</p>
-    </div>
-  );
-}
+import { Storefront } from '../features/storefront/Storefront';
+import { CustomerLogin } from '../features/auth/CustomerLogin';
 
 function NotFoundPage() {
   return (
-    <div>
+    <div style={{ padding: '5rem', textAlign: 'center' }}>
       <h1>404</h1>
       <p>Page not found</p>
     </div>
@@ -21,7 +14,8 @@ function NotFoundPage() {
 export function AppRouter() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<Storefront />} />
+      <Route path="/login" element={<CustomerLogin />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

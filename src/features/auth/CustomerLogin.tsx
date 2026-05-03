@@ -5,11 +5,12 @@ import { useSnackbar } from '../../components/common/Snackbar';
 import { useNavigate } from 'react-router-dom';
 
 export const CustomerLogin: React.FC = () => {
-  const { login } = useCustomerAuth();
+  const { login, register } = useCustomerAuth();
   const { platformConfig } = useConfig();
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [fullName, setFullName] = useState('');
   const [isRegistering, setIsRegistering] = useState(false);
 
   const { showSnackbar } = useSnackbar();
@@ -19,11 +20,18 @@ export const CustomerLogin: React.FC = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await login(email);
-      showSnackbar('Welcome back! Login successful.', 'success');
+      if (isRegistering) {
+        const [firstName, ...rest] = fullName.split(' ');
+        const lastName = rest.join(' ');
+        await register(email, password, firstName, lastName);
+        showSnackbar('Account created successfully! Welcome.', 'success');
+      } else {
+        await login(email, password);
+        showSnackbar('Welcome back! Login successful.', 'success');
+      }
       navigate('/');
     } catch (error: any) {
-      const message = error.response?.data?.message || 'Login failed. Please check your credentials.';
+      const message = error.response?.data?.message || (isRegistering ? 'Registration failed.' : 'Login failed. Please check your credentials.');
       showSnackbar(message, 'error');
     } finally {
       setIsLoading(false);
@@ -81,6 +89,9 @@ export const CustomerLogin: React.FC = () => {
                 <label style={{ display: 'block', marginBottom: '6px', fontSize: '0.85rem', fontWeight: 600, color: '#444' }}>Full Name</label>
                 <input
                   type="text"
+                  required
+                  value={fullName}
+                  onChange={e => setFullName(e.target.value)}
                   placeholder="John Doe"
                   style={{ width: '100%', padding: '12px', border: '2px solid #eee', borderRadius: '8px', fontSize: '0.9rem', outline: 'none' }}
                   onFocus={e => { e.currentTarget.style.borderColor = '#ff6b35'; }}

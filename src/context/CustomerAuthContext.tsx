@@ -1,10 +1,11 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import { axiosClient as axios } from '../lib/api';
 import { tokenStorage } from '../../../mtse-shared/src/auth';
 
 interface CustomerAuthContextType {
   customerEmail: string | null;
-  login: (email: string) => Promise<void>;
+  login: (email: string, password: string) => Promise<void>;
+  register: (email: string, password: string, firstName?: string, lastName?: string) => Promise<void>;
   logout: () => void;
   isAuthenticated: boolean;
 }
@@ -21,19 +22,39 @@ export const CustomerAuthProvider: React.FC<{ children: React.ReactNode }> = ({ 
     }
   }, []);
 
-  const login = async (email: string) => {
+  const login = async (email: string, password: string) => {
     try {
-      const response = await axios.post('http://localhost:3000/auth/login', {
+      const response = await axios.post('/auth/login', {
         email,
-        role: 'customer'
+        password,
       });
-      
+
       const { access_token, user } = response.data;
       tokenStorage.setTokens({ accessToken: access_token });
-      tokenStorage.setUser({ ...user, roles: ['customer'], id: `cust_${Date.now()}` });
+      tokenStorage.setUser({ ...user, roles: ['customer'] });
       setCustomerEmail(email);
     } catch (error) {
       console.error('Login failed:', error);
+      throw error;
+    }
+  };
+
+  const register = async (email: string, password: string, firstName?: string, lastName?: string) => {
+    try {
+      const response = await axios.post('/auth/register', {
+        email,
+        password,
+        firstName,
+        lastName,
+        role: 'customer'
+      });
+
+      const { access_token, user } = response.data;
+      tokenStorage.setTokens({ accessToken: access_token });
+      tokenStorage.setUser({ ...user, roles: ['customer'] });
+      setCustomerEmail(email);
+    } catch (error) {
+      console.error('Registration failed:', error);
       throw error;
     }
   };
@@ -44,7 +65,7 @@ export const CustomerAuthProvider: React.FC<{ children: React.ReactNode }> = ({ 
   };
 
   return (
-    <CustomerAuthContext.Provider value={{ customerEmail, login, logout, isAuthenticated: !!customerEmail }}>
+    <CustomerAuthContext.Provider value={{ customerEmail, login, register, logout, isAuthenticated: !!customerEmail }}>
       {children}
     </CustomerAuthContext.Provider>
   );

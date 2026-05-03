@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { axiosClient as axios } from '../../lib/api';
 import { useCustomerAuth } from '../../context/CustomerAuthContext';
 import type { OrderDto } from '../../../../mtse-shared/src/types';
 
@@ -10,10 +10,12 @@ export const OrderHistory: React.FC = () => {
 
   useEffect(() => {
     if (isAuthenticated && customerEmail) {
-      axios.get<OrderDto[]>(`http://localhost:3000/orders?customerEmail=${customerEmail}`)
+      axios.get<OrderDto[]>(`/orders?customerEmail=${customerEmail}`)
         .then(res => {
+          const data = res.data;
+          const items = Array.isArray(data) ? data : data.items || [];
           // Sort by date descending
-          const sorted = res.data.sort((a, b) => 
+          const sorted = [...items].sort((a, b) => 
             new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
           );
           setOrders(sorted);

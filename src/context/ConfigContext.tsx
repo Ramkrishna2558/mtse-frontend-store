@@ -57,8 +57,16 @@ export const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       axios.get('http://localhost:3000/products'),
       axios.get('http://localhost:3000/stores')
     ]).then(([productsRes, storesRes]) => {
-      setAllProducts(productsRes.data);
-      setStoresData(storesRes.data);
+      setAllProducts((Array.isArray(productsRes.data) ? productsRes.data : productsRes.data.items || []).map(p => {
+        const firstVariantPrice = p.variants?.[0]?.price;
+        const price = p.price !== undefined ? p.price : (firstVariantPrice !== undefined ? Number(firstVariantPrice) : 0);
+        return {
+          ...p,
+          price: Number(price),
+          category: typeof p.category === 'object' && p.category !== null ? p.category.name : p.category
+        };
+      }));
+      setStoresData(Array.isArray(storesRes.data) ? storesRes.data : storesRes.data.items || storesRes.data);
     }).catch(error => {
       console.error('Failed to fetch marketplace data:', error);
     }).finally(() => {

@@ -5,10 +5,14 @@ import { ConfigProvider } from '../context/ConfigContext';
 import { SnackbarProvider } from '../components/common/Snackbar';
 
 interface AppProvidersProps {
-  children: React.ReactNode;
+  readonly children: React.ReactNode;
 }
-
-export function AppProviders({ children }: AppProvidersProps) {
+/**
+ * AppProviders Component
+ * @param param0 children
+ * @returns React.JSX.Element
+ */
+export function AppProviders({ children }: AppProvidersProps): React.JSX.Element {
   return (
     <SnackbarProvider>
       <CustomerAuthProvider>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ethereal Mono - Collections</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Noto+Serif:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#e3e2e2",
+                        "on-tertiary-fixed": "#1a1c1b",
+                        "on-primary-container": "#848484",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#838483",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#454746",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-primary-fixed": "#1b1b1b",
+                        "outline": "#7e7576",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#5e5e5e",
+                        "tertiary-container": "#1a1c1b",
+                        "tertiary": "#000000",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-surface-variant": "#4c4546",
+                        "tertiary-fixed-dim": "#c6c7c5",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-variant": "#e2e2e2",
+                        "outline-variant": "#cfc4c5",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed-variant": "#474747",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-dim": "#dadada",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "primary": "#000000",
+                        "on-surface": "#1a1c1c",
+                        "inverse-on-surface": "#f0f1f1",
+                        "primary-container": "#1b1b1b",
+                        "background": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9f9",
+                        "on-background": "#1a1c1c",
+                        "secondary": "#5e5e5e",
+                        "secondary-fixed": "#e3e2e2",
+                        "primary-fixed": "#e2e2e2",
+                        "tertiary-fixed": "#e2e3e1",
+                        "on-secondary-container": "#646464",
+                        "error": "#ba1a1a",
+                        "surface": "#f9f9f9",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "container-max": "1440px",
+                        "section-gap": "128px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Noto Serif"],
+                        "headline-xl": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["2rem", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "headline-xl": ["4.5rem", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "headline-lg": ["3rem", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "body-lg": ["1.125rem", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "label-caps": ["0.75rem", { "lineHeight": "1.2", "letterSpacing": "0.15em", "fontWeight": "500" }],
+                        "body-md": ["1rem", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="bg-white/80 dark:bg-zinc-950/80 backdrop-blur-sm fixed top-0 w-full z-50 border-b border-zinc-100 dark:border-zinc-900 flat no-shadows ease-in-out transition-all flex justify-between items-center px-8 md:px-16 h-20">
+<div class="flex items-center gap-8">
+<a class="text-2xl font-serif tracking-tighter text-zinc-900 dark:text-zinc-50 hover:opacity-60 transition-all duration-500" href="#">ETHEREAL</a>
+<div class="hidden md:flex gap-8">
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-zinc-900 dark:text-zinc-50 border-b border-zinc-900 dark:border-zinc-50 pb-0.5 ease-in-out transition-all" href="#">Collections</a>
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 hover:opacity-60 transition-all duration-500 ease-in-out transition-all" href="#">Archive</a>
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 hover:opacity-60 transition-all duration-500 ease-in-out transition-all" href="#">Journal</a>
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 hover:opacity-60 transition-all duration-500 ease-in-out transition-all" href="#">Atelier</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-zinc-900 dark:text-zinc-50 hover:opacity-60 transition-all duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<button class="text-zinc-900 dark:text-zinc-50 hover:opacity-60 transition-all duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-[120px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<header class="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-4">Edition 01</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">A curated selection of minimalist essentials. Designed for longevity and crafted with sustainable materials.</p>
+</div>
+<div class="flex items-center gap-4 border-b border-outline-variant pb-2">
+<span class="font-label-caps text-label-caps text-on-surface uppercase">Sort By</span>
+<button class="flex items-center gap-2 text-primary hover:opacity-60 transition-opacity">
+<span class="font-label-caps text-label-caps">Latest</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+</header>
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Filter Sidebar -->
+<aside class="w-full lg:w-[240px] flex-shrink-0 mb-12 lg:mb-0">
+<div class="sticky top-[120px] space-y-12">
+<!-- Filter Category: Category -->
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface uppercase mb-6 border-b border-outline-variant pb-2">Category</h3>
+<div class="space-y-4">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="form-checkbox h-4 w-4 text-primary border-outline rounded-none focus:ring-0 focus:ring-offset-0 bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:opacity-60 transition-opacity">All Pieces</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-primary border-outline rounded-none focus:ring-0 focus:ring-offset-0 bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Outerwear</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-primary border-outline rounded-none focus:ring-0 focus:ring-offset-0 bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Knitwear</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-primary border-outline rounded-none focus:ring-0 focus:ring-offset-0 bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Shirting</span>
+</label>
+</div>
+</div>
+<!-- Filter Category: Size -->
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface uppercase mb-6 border-b border-outline-variant pb-2">Size</h3>
+<div class="flex flex-wrap gap-2">
+<button class="w-10 h-10 border border-outline font-label-caps text-label-caps flex items-center justify-center hover:border-primary transition-colors">XS</button>
+<button class="w-10 h-10 border border-primary bg-primary text-on-primary font-label-caps text-label-caps flex items-center justify-center">S</button>
+<button class="w-10 h-10 border border-outline font-label-caps text-label-caps flex items-center justify-center hover:border-primary transition-colors">M</button>
+<button class="w-10 h-10 border border-outline font-label-caps text-label-caps flex items-center justify-center hover:border-primary transition-colors">L</button>
+<button class="w-10 h-10 border border-outline font-label-caps text-label-caps flex items-center justify-center hover:border-primary transition-colors">XL</button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16">
+<!-- Product Card 1 (Large Image) -->
+<article class="col-span-1 md:col-span-2 xl:col-span-2 group cursor-pointer">
+<div class="aspect-[1.95] bg-surface-variant mb-6 overflow-hidden">
+<img alt="Ethereal Mono product featured image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A wide, landscape-oriented editorial fashion photograph. Models are positioned in a vast, minimalist concrete space with soft, diffused daylight pouring in from out of frame. They wear structured, oversized monochromatic black and white garments. The aesthetic is extremely clean, modern, and slightly brutalist, fitting a high-end luxury brand. The colors are muted grays, stark whites, and deep blacks." src="https://lh3.googleusercontent.com/aida/ADBb0ui-wTxu-32ejfxsVOIK_WfeesLD9D8LVVpH2pa0mNgwQ92ECPomw2jRR0nfgrXAMg4FlNyqUZuGbzPImY0EWUQpfpNyOyzbFUe3WIdMGO64Aw6_HHPsMynm1o2ps0-m2k5VvCQZ_ACt7rG7OAJoVYwq2M1r8l8bT4m7uxkXHyf97hThAPje0mhmY7nhsBZ8ZkxbhmgWYana1_pdBBwMOvSOUN-CtJ0NIL9TwaULr5EiLaAEUPqiAWB-8YnS8uam0K_5pFaiI9rsig"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-body-md text-body-md text-primary mb-1">Structural Overcoat</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Wool / Cashmere Blend</p>
+</div>
+<span class="font-label-caps text-label-caps text-primary">$890</span>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="col-span-1 group cursor-pointer">
+<div class="aspect-[0.67] bg-surface-variant mb-6 overflow-hidden">
+<img alt="Ethereal Mono product image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A tall, portrait-oriented fashion photograph of a single model against a seamless light gray background. The model is wearing a flowing, asymmetrical white silk dress that drapes elegantly. Lighting is soft, high-key, and sculptural, emphasizing the texture of the fabric. The overall mood is ethereal, clean, and minimalist, typical of luxury e-commerce." src="https://lh3.googleusercontent.com/aida/ADBb0ui1G14OFRlfytdQUtvBkaOx0PkHWnQw9B1KMCPHnr9Oz-0BD33RAEmL2L-ezdeCXabky8zqYWPz0lu4nQ_xeXW8utYwiWBHj94fEB6LZaBBsyACMQQpmXmSEbR5cZ1B5Z4J4SNcYl6MXqrNyktxviF36_PDDneU0pQZtZ54NN8Dns4ErL6tfoP85fNlcDtwsvmuf_Le5aOmNk7-TNqvGkelqaXX6DFOhaft2XcB-0UwZ6I_rt11ocmlYt5pMrrEyZ0Sx0G7iIM2"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-body-md text-body-md text-primary mb-1">Draped Silk Tunic</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">100% Mulberry Silk</p>
+</div>
+<span class="font-label-caps text-label-caps text-primary">$450</span>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="col-span-1 group cursor-pointer">
+<div class="aspect-[1.26] bg-surface-variant mb-6 overflow-hidden">
+<img alt="Ethereal Mono product image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A medium close-up shot of a model's torso and arms, highlighting the intricate knit detail of a heavy charcoal sweater. The background is a soft, out-of-focus white. The lighting is directional, casting subtle shadows that define the ribbed texture of the garment. The image feels tactile, warm, and highly premium, adhering to a strict monochromatic palette." src="https://lh3.googleusercontent.com/aida/ADBb0uhNW_45jBgJ0rtHpLI6QQKMOHDT9dQRkubrVAsMhIhkr-eTX916hgid3sPd50-oTOaJTZkRuW6-J-zRyvb6zyb-mVtgm5YEBYyt_B0m4WxQeG0JD90KKbxtl-3Sq1lJl-xGcQD5LJdOmX_fKwH_bGTY53ZhFRMc-h7eNMfndZjaLo6ihflo3Ti5YkoQEMbpGp68UOX0piikKDndUqLf5o83LSdi_E-zgPr0pR8PSXUkv39ptUw9cNSCm0-NsH4c4qODTGbnif8Irw"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-body-md text-body-md text-primary mb-1">Ribbed Mock Neck</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Merino Wool</p>
+</div>
+<span class="font-label-caps text-label-caps text-primary">$320</span>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="col-span-1 group cursor-pointer">
+<div class="aspect-[1.26] bg-surface-variant mb-6 overflow-hidden">
+<img alt="Ethereal Mono product image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A still-life product shot of a pair of minimalist black leather boots resting on a pale stone plinth. The composition is highly geometric and architectural. Soft, diffused lighting creates gentle gradients across the smooth leather. The background is a stark, clean white void, putting all focus on the shape and material of the footwear in a luxurious, gallery-like presentation." src="https://lh3.googleusercontent.com/aida/ADBb0ugLLgZoaHkDcc4uqRh93CYEwLH0gTnkIDkRZ1lGNuq3d35HO93Ib7QvO4tALxdDyQmQgWAjKF4pt2rgsyRb_53wecCztSMOYxcHUbIQEnWhXQGxmL_dWZNP6kRl04tf0hGyWrQ5Sd6bz_kPc5PHlPPG3xhQR_BIecaWEemGb7a-E8cQHEJXrBcTyR4Vh0Os8SVzVyUaovmNUnQ2o_TlS-piD2Vtw3YlQGU0xHw3gV3LvQJFmXE0tJIucNsAsAidoW9Jnx17IEfm_w"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-body-md text-body-md text-primary mb-1">Chelsea Boot</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Italian Calf Leather</p>
+</div>
+<span class="font-label-caps text-label-caps text-primary">$680</span>
+</div>
+</article>
+<!-- Product Card 5 -->
+<article class="col-span-1 group cursor-pointer">
+<div class="aspect-[1.26] bg-surface-variant mb-6 overflow-hidden">
+<img alt="Ethereal Mono product image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A close-up, abstract detail shot of white cotton shirting fabric. The image focuses on the crisp collar and a single concealed button. The lighting is bright and airy, creating a high-key, almost blown-out aesthetic that feels fresh and pure. The depth of field is very shallow, blurring the background into a soft white haze. The mood is precise, clean, and essential." src="https://lh3.googleusercontent.com/aida/ADBb0ui58_311OwWFJWO7TGxRu_rVLVYJfTzruiuINAMYG9Ovx1JqcM_pcgcbGBI0Us-slf5XyE1Bh4Jhl_vTTs1RgqKBgddjlFY9dRanDehLU472sYo1Oz8zfKL0ExkGzKfqxeGHKaWRcVF0SB9lXMWx9u5ESZLIbrmIcI8IJzgfWzGHNI0V3rCyHhQVRzR7qHT2do7j8A68ALD6X5oM1PWJqk-ti7dd9aZyG6bDXpQcI6kOjqDwa-CVaHnShVmf_3JDOITojTv5Q0_JQ"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-body-md text-body-md text-primary mb-1">Oversized Poplin Shirt</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Organic Cotton</p>
+</div>
+<span class="font-label-caps text-label-caps text-primary">$210</span>
+</div>
+</article>
+</div>
+</div>
+<!-- Pagination / Load More -->
+<div class="mt-24 flex justify-center border-t border-outline-variant pt-12">
+<button class="font-label-caps text-label-caps text-primary border border-primary px-12 py-4 hover:bg-primary hover:text-on-primary transition-colors uppercase tracking-widest">
+                Load More
+            </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-50 dark:bg-zinc-950 w-full border-t border-zinc-100 dark:border-zinc-900 flat">
+<div class="max-w-[1440px] mx-auto py-24 px-16 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-zinc-500 dark:text-zinc-400 font-serif text-[10px] uppercase tracking-widest">
+                © 2024 ETHEREAL MONO. SUSTAINABLY CRAFTED.
+            </div>
+<div class="flex gap-8">
+<a class="text-zinc-500 dark:text-zinc-400 font-serif text-[10px] uppercase tracking-widest hover:underline underline-offset-4 transition-opacity duration-300" href="#">Privacy Policy</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-serif text-[10px] uppercase tracking-widest hover:underline underline-offset-4 transition-opacity duration-300" href="#">Terms of Service</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-serif text-[10px] uppercase tracking-widest hover:underline underline-offset-4 transition-opacity duration-300" href="#">Shipping &amp; Returns</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-serif text-[10px] uppercase tracking-widest hover:underline underline-offset-4 transition-opacity duration-300" href="#">Contact</a>
+</div>
+<div class="hidden">
+                ETHEREAL
+            </div>
+</div>
+</footer>
+</body></html>

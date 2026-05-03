@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ethereal Mono - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Noto+Serif:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#e3e2e2",
+                        "on-tertiary-fixed": "#1a1c1b",
+                        "on-primary-container": "#848484",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#838483",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#454746",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-primary-fixed": "#1b1b1b",
+                        "outline": "#7e7576",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#5e5e5e",
+                        "tertiary-container": "#1a1c1b",
+                        "tertiary": "#000000",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-surface-variant": "#4c4546",
+                        "tertiary-fixed-dim": "#c6c7c5",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-variant": "#e2e2e2",
+                        "outline-variant": "#cfc4c5",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed-variant": "#474747",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-dim": "#dadada",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "primary": "#000000",
+                        "on-surface": "#1a1c1c",
+                        "inverse-on-surface": "#f0f1f1",
+                        "primary-container": "#1b1b1b",
+                        "background": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9f9",
+                        "on-background": "#1a1c1c",
+                        "secondary": "#5e5e5e",
+                        "secondary-fixed": "#e3e2e2",
+                        "primary-fixed": "#e2e2e2",
+                        "tertiary-fixed": "#e2e3e1",
+                        "on-secondary-container": "#646464",
+                        "error": "#ba1a1a",
+                        "surface": "#f9f9f9",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "container-max": "1440px",
+                        "section-gap": "128px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Noto Serif"],
+                        "headline-xl": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["2rem", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "headline-xl": ["4.5rem", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "headline-lg": ["3rem", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "body-lg": ["1.125rem", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "label-caps": ["0.75rem", { "lineHeight": "1.2", "letterSpacing": "0.15em", "fontWeight": "500" }],
+                        "body-md": ["1rem", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar to match vertical scroller guidance */
+        ::-webkit-scrollbar {
+            width: 2px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F9F9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #000000;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="bg-white/80 dark:bg-zinc-950/80 backdrop-blur-sm fixed top-0 w-full z-50 border-b border-zinc-100 dark:border-zinc-900 ease-in-out transition-all">
+<div class="flex justify-between items-center w-full px-8 md:px-16 h-20 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-8">
+<a class="text-2xl font-serif tracking-tighter text-zinc-900 dark:text-zinc-50 font-headline-md text-headline-md" href="#">ETHEREAL</a>
+<div class="hidden md:flex gap-8 ml-8">
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 hover:opacity-60 transition-all duration-500 font-label-caps text-label-caps" href="#">Collections</a>
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 hover:opacity-60 transition-all duration-500 font-label-caps text-label-caps" href="#">Archive</a>
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 hover:opacity-60 transition-all duration-500 font-label-caps text-label-caps" href="#">Journal</a>
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 hover:opacity-60 transition-all duration-500 font-label-caps text-label-caps" href="#">Atelier</a>
+</div>
+</div>
+<div class="flex items-center gap-6 text-zinc-900 dark:text-zinc-50">
+<button class="hover:opacity-60 transition-all duration-500">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="hover:opacity-60 transition-all duration-500">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative w-full h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden mb-section-gap">
+<div class="absolute inset-0 z-0">
+<img alt="A striking, high-fashion editorial photograph of a model in a minimalist, avant-garde black silk garment. The model stands against a stark, pure white studio background. The lighting is harsh and directional, creating deep, dramatic shadows that emphasize the texture of the fabric and the structural silhouette. The mood is powerful, quiet, and deeply luxurious." class="w-full h-full object-cover opacity-90 object-center" data-alt="A striking, high-fashion editorial photograph of a model in a minimalist, avant-garde black silk garment. The model stands against a stark, pure white studio background. The lighting is harsh and directional, creating deep, dramatic shadows that emphasize the texture of the fabric and the structural silhouette. The mood is powerful, quiet, and deeply luxurious." src="https://lh3.googleusercontent.com/aida/ADBb0ujKqh7wQW1OL-TcgAKA_eXR4k7cHtMiy-2vNBbcCxwvX5SkiBYuRgVooeFK6NBdbxzqYKJN9nZ06PuMuEWWvRrhPhYvzhEiQS3XQIYQW5PqBx4cVlazh9YyTtrSI-fhCIW4mQ8m3Oi-4pi-a2jVVoEUrEa6Yo3hQH-YrY8XCx1J7b6wZM8XeWUG-RwDYpXiyZ3d-H6Qhign4sCTcpa0gj8A9YcsEhK2iUgn48pgtf6nuBVp_LyidaNWcWzSLpTsVp4621_FGMkN"/>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center px-margin-mobile md:px-margin-desktop">
+<h1 class="font-headline-xl text-headline-xl text-primary mix-blend-difference invert uppercase mb-6 tracking-tighter">The Void<br/>Collection</h1>
+<p class="font-body-lg text-body-lg text-surface-container-lowest max-w-xl mx-auto mb-10 opacity-90 mix-blend-difference invert">Embracing the silence between forms. A study in structural minimalism and quiet luxury.</p>
+<a class="inline-flex items-center justify-center px-12 py-4 bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-widest hover:bg-surface-tint transition-colors duration-300" href="#">Explore Collection</a>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 z-10 mix-blend-difference invert">
+<span class="font-label-caps text-[10px] uppercase tracking-widest text-surface-container-lowest">Scroll</span>
+<div class="w-[1px] h-12 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1/2 bg-primary"></div>
+</div>
+</div>
+</section>
+<!-- New Arrivals / Bento Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="flex justify-between items-end mb-16 border-b border-outline-variant pb-4">
+<h2 class="font-headline-lg text-headline-lg text-primary">New Arrivals</h2>
+<a class="font-label-caps text-label-caps text-primary uppercase tracking-widest hover:opacity-60 transition-opacity flex items-center gap-2" href="#">View All <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Large Feature -->
+<div class="md:col-span-8 group cursor-pointer relative bg-surface-container-lowest">
+<div class="aspect-[1.26] overflow-hidden">
+<img alt="A close-up macro shot of premium, heavy-weight cotton fabric. The material is draped elegantly, creating soft folds that catch the subtle, diffused studio light. The color palette is strictly monochromatic, focusing on a pristine, bright white against a slightly off-white background. The image exudes a sense of tactile luxury and minimalist perfection." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up macro shot of premium, heavy-weight cotton fabric. The material is draped elegantly, creating soft folds that catch the subtle, diffused studio light. The color palette is strictly monochromatic, focusing on a pristine, bright white against a slightly off-white background. The image exudes a sense of tactile luxury and minimalist perfection." src="https://lh3.googleusercontent.com/aida/ADBb0uhNW_45jBgJ0rtHpLI6QQKMOHDT9dQRkubrVAsMhIhkr-eTX916hgid3sPd50-oTOaJTZkRuW6-J-zRyvb6zyb-mVtgm5YEBYyt_B0m4WxQeG0JD90KKbxtl-3Sq1lJl-xGcQD5LJdOmX_fKwH_bGTY53ZhFRMc-h7eNMfndZjaLo6ihflo3Ti5YkoQEMbpGp68UOX0piikKDndUqLf5o83LSdi_E-zgPr0pR8PSXUkv39ptUw9cNSCm0-NsH4c4qODTGbnif8Irw"/>
+</div>
+<div class="mt-6 flex justify-between items-start">
+<div>
+<h3 class="font-body-md text-body-md text-primary">Structured Cotton Trench</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-2">Outerwear</p>
+</div>
+<span class="font-label-caps text-label-caps text-primary">$850</span>
+</div>
+</div>
+<!-- Tall Feature -->
+<div class="md:col-span-4 group cursor-pointer relative bg-surface-container-lowest">
+<div class="aspect-[0.67] overflow-hidden">
+<img alt="A full-length editorial shot of a woman walking away down a brutalist concrete hallway. She is wearing a long, sweeping minimalist coat in a stark charcoal grey. The architecture features harsh angles and deep shadows, contrasting with the fluid movement of the garment. The lighting is cool and desaturated, highlighting the stark modernism of the scene." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A full-length editorial shot of a woman walking away down a brutalist concrete hallway. She is wearing a long, sweeping minimalist coat in a stark charcoal grey. The architecture features harsh angles and deep shadows, contrasting with the fluid movement of the garment. The lighting is cool and desaturated, highlighting the stark modernism of the scene." src="https://lh3.googleusercontent.com/aida/ADBb0ui1G14OFRlfytdQUtvBkaOx0PkHWnQw9B1KMCPHnr9Oz-0BD33RAEmL2L-ezdeCXabky8zqYWPz0lu4nQ_xeXW8utYwiWBHj94fEB6LZaBBsyACMQQpmXmSEbR5cZ1B5Z4J4SNcYl6MXqrNyktxviF36_PDDneU0pQZtZ54NN8Dns4ErL6tfoP85fNlcDtwsvmuf_Le5aOmNk7-TNqvGkelqaXX6DFOhaft2XcB-0UwZ6I_rt11ocmlYt5pMrrEyZ0Sx0G7iIM2"/>
+</div>
+<div class="mt-6 flex justify-between items-start">
+<div>
+<h3 class="font-body-md text-body-md text-primary">Monolith Coat</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-2">Archive</p>
+</div>
+<span class="font-label-caps text-label-caps text-primary">$1,200</span>
+</div>
+</div>
+<!-- Wide Feature -->
+<div class="md:col-span-12 group cursor-pointer relative bg-surface-container-lowest mt-12">
+<div class="aspect-[1.95] md:aspect-[2.5] overflow-hidden">
+<img alt="An abstract, wide-format composition showing a collection of minimalist silver jewelry resting on a block of rough, unpolished slate. The contrast between the refined, highly polished silver and the dark, textured stone is dramatic. The lighting is sharp, creating crisp highlights on the metal curves. The overall aesthetic is cold, precise, and luxurious." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An abstract, wide-format composition showing a collection of minimalist silver jewelry resting on a block of rough, unpolished slate. The contrast between the refined, highly polished silver and the dark, textured stone is dramatic. The lighting is sharp, creating crisp highlights on the metal curves. The overall aesthetic is cold, precise, and luxurious." src="https://lh3.googleusercontent.com/aida/ADBb0ui-wTxu-32ejfxsVOIK_WfeesLD9D8LVVpH2pa0mNgwQ92ECPomw2jRR0nfgrXAMg4FlNyqUZuGbzPImY0EWUQpfpNyOyzbFUe3WIdMGO64Aw6_HHPsMynm1o2ps0-m2k5VvCQZ_ACt7rG7OAJoVYwq2M1r8l8bT4m7uxkXHyf97hThAPje0mhmY7nhsBZ8ZkxbhmgWYana1_pdBBwMOvSOUN-CtJ0NIL9TwaULr5EiLaAEUPqiAWB-8YnS8uam0K_5pFaiI9rsig"/>
+</div>
+<div class="mt-6 flex justify-between items-start">
+<div>
+<h3 class="font-body-md text-body-md text-primary">Silver Hardware Collection</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-2">Accessories</p>
+</div>
+<span class="font-label-caps text-label-caps text-primary">From $250</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Atelier / Storytelling -->
+<section class="bg-surface py-section-gap mb-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="order-2 md:order-1">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant block mb-6">The Atelier</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8 leading-tight">Crafting the<br/>Immaterial</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-md">Our process begins with reduction. We strip away the non-essential until only the pure structural intent remains. Every seam is considered; every fabric selected for its specific drape and weight. This is not fashion, it is architecture for the body.</p>
+<a class="inline-block border border-primary px-8 py-4 font-label-caps text-label-caps uppercase tracking-widest text-primary hover:bg-primary hover:text-on-primary transition-colors duration-300" href="#">Discover Our Process</a>
+</div>
+<div class="order-1 md:order-2 relative">
+<div class="aspect-[1.76] overflow-hidden">
+<img alt="A behind-the-scenes look inside a bright, minimalist design atelier. A tailor's dummy stands near a large window, draped with muslin fabric pinned in an architectural shape. The room is mostly white, with sleek metallic tables and precise tools laid out. The natural light pouring in is soft and diffuse, highlighting the meticulous nature of the craft." class="w-full h-full object-cover" data-alt="A behind-the-scenes look inside a bright, minimalist design atelier. A tailor's dummy stands near a large window, draped with muslin fabric pinned in an architectural shape. The room is mostly white, with sleek metallic tables and precise tools laid out. The natural light pouring in is soft and diffuse, highlighting the meticulous nature of the craft." src="https://lh3.googleusercontent.com/aida/ADBb0ui58_311OwWFJWO7TGxRu_rVLVYJfTzruiuINAMYG9Ovx1JqcM_pcgcbGBI0Us-slf5XyE1Bh4Jhl_vTTs1RgqKBgddjlFY9dRanDehLU472sYo1Oz8zfKL0ExkGzKfqxeGHKaWRcVF0SB9lXMWx9u5ESZLIbrmIcI8IJzgfWzGHNI0V3rCyHhQVRzR7qHT2do7j8A68ALD6X5oM1PWJqk-ti7dd9aZyG6bDXpQcI6kOjqDwa-CVaHnShVmf_3JDOITojTv5Q0_JQ"/>
+</div>
+<div class="absolute -bottom-12 -left-12 w-2/3 aspect-[1.87] overflow-hidden hidden md:block border border-surface-container-lowest bg-surface-container-lowest p-2 shadow-sm">
+<img alt="A close-up detail shot of hands working with dark, heavy wool fabric, pinning a precise seam. The focus is incredibly sharp on the silver pin and the texture of the cloth, while the background falls into a soft blur. The lighting is directional, emphasizing the tactile quality of the materials and the careful precision of the artisan." class="w-full h-full object-cover" data-alt="A close-up detail shot of hands working with dark, heavy wool fabric, pinning a precise seam. The focus is incredibly sharp on the silver pin and the texture of the cloth, while the background falls into a soft blur. The lighting is directional, emphasizing the tactile quality of the materials and the careful precision of the artisan." src="https://lh3.googleusercontent.com/aida/ADBb0ugLLgZoaHkDcc4uqRh93CYEwLH0gTnkIDkRZ1lGNuq3d35HO93Ib7QvO4tALxdDyQmQgWAjKF4pt2rgsyRb_53wecCztSMOYxcHUbIQEnWhXQGxmL_dWZNP6kRl04tf0hGyWrQ5Sd6bz_kPc5PHlPPG3xhQR_BIecaWEemGb7a-E8cQHEJXrBcTyR4Vh0Os8SVzVyUaovmNUnQ2o_TlS-piD2Vtw3YlQGU0xHw3gV3LvQJFmXE0tJIucNsAsAidoW9Jnx17IEfm_w"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Journal Teaser -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant block mb-4">Journal</span>
+<h2 class="font-headline-md text-headline-md text-primary">Notes on Form</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-1 gap-16 max-w-4xl mx-auto">
+<div class="group cursor-pointer">
+<div class="aspect-[2.01] overflow-hidden mb-8">
+<img alt="An abstract, minimalist architectural photograph showing a stark white staircase cutting sharply against a clear, deep blue sky. The angles are severe and precise, creating strong geometric shadows. The image feels completely empty of human presence, focusing solely on form, light, and shadow. It evokes a sense of modernism and quiet grandeur." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An abstract, minimalist architectural photograph showing a stark white staircase cutting sharply against a clear, deep blue sky. The angles are severe and precise, creating strong geometric shadows. The image feels completely empty of human presence, focusing solely on form, light, and shadow. It evokes a sense of modernism and quiet grandeur." src="https://lh3.googleusercontent.com/aida/ADBb0ujJo66NgSRVt9wiTJGVv2kgKpu9YOPvz8rcdhK9ydpv2F3ZD-kXJ8mjcBAFpSriKtfCpYWiFmpWlqFHIIPIEkKTK90A7H__v2ZELjoR8a-xLX9ROHuifodfJc-g5bN2Y2le-t23knBy1t9k97slLQLLWkWRmDRnaijJD9PJ31MAREIRvA1kuXtfavX8Pt7401fyQsrNGmIvkqJkX7_snoH7zMmrpwUp5gmwWn9Xjp3CHuntElKzFBCeSeIlHfNWwya2KaPCfS9Lfg"/>
+</div>
+<div class="text-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest block mb-4">Volume 04</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">The Architecture of Silence</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto mb-6">Exploring the intersection of brutalist forms and delicate textiles in our latest archive exhibition.</p>
+<span class="inline-block border-b border-primary pb-1 font-label-caps text-label-caps uppercase tracking-widest text-primary hover:opacity-60 transition-opacity">Read Article</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-50 dark:bg-zinc-950 w-full border-t border-zinc-200 dark:border-zinc-800 transition-opacity duration-300">
+<div class="max-w-[1440px] mx-auto py-24 px-16 flex flex-col md:flex-row justify-between items-center gap-8">
+<p class="font-serif text-[10px] uppercase tracking-widest text-zinc-900 dark:text-zinc-50 font-label-caps text-label-caps">© 2024 ETHEREAL MONO. SUSTAINABLY CRAFTED.</p>
+<div class="flex flex-wrap justify-center gap-6 md:gap-8">
+<a class="font-serif text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:underline underline-offset-4 transition-opacity duration-300 font-label-caps text-label-caps" href="#">Privacy Policy</a>
+<a class="font-serif text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:underline underline-offset-4 transition-opacity duration-300 font-label-caps text-label-caps" href="#">Terms of Service</a>
+<a class="font-serif text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:underline underline-offset-4 transition-opacity duration-300 font-label-caps text-label-caps" href="#">Shipping &amp; Returns</a>
+<a class="font-serif text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:underline underline-offset-4 transition-opacity duration-300 font-label-caps text-label-caps" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

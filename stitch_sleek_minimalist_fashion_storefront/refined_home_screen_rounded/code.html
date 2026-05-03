@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURELIA - Ethereal Mono</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Noto+Serif:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#fcf9f8",
+                    "on-surface-variant": "#494738",
+                    "tertiary-fixed": "#e1e2ec",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e5e2e1",
+                    "secondary-fixed": "#ffdad3",
+                    "inverse-surface": "#313030",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#756f18",
+                    "surface-tint": "#676007",
+                    "inverse-primary": "#d2c96a",
+                    "secondary": "#964735",
+                    "on-primary-fixed-variant": "#4d4800",
+                    "primary-fixed": "#efe583",
+                    "background": "#fcf9f8",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#1c1b1b",
+                    "on-tertiary-container": "#6b6c75",
+                    "surface-variant": "#e5e2e1",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#fdf38f",
+                    "surface-container": "#f0eded",
+                    "tertiary": "#5c5e67",
+                    "surface-container-high": "#eae7e7",
+                    "tertiary-container": "#efeffa",
+                    "on-primary-fixed": "#1f1c00",
+                    "surface": "#fcf9f8",
+                    "on-secondary-fixed": "#3d0600",
+                    "tertiary-fixed-dim": "#c5c6d0",
+                    "primary-fixed-dim": "#d2c96a",
+                    "outline-variant": "#cbc7b3",
+                    "surface-container-low": "#f6f3f2",
+                    "on-secondary-fixed-variant": "#783021",
+                    "secondary-fixed-dim": "#ffb4a4",
+                    "on-tertiary-fixed": "#191b23",
+                    "primary": "#676007",
+                    "secondary-container": "#fd9982",
+                    "on-tertiary-fixed-variant": "#45464f",
+                    "on-background": "#1c1b1b",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#762f1f",
+                    "surface-dim": "#dcd9d9",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#7a7766"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding": "40px",
+                    "stack-md": "24px",
+                    "gutter": "24px",
+                    "stack-sm": "12px",
+                    "unit": "8px",
+                    "stack-lg": "48px"
+            },
+            "fontFamily": {
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-xl": [
+                            "Noto Serif"
+                    ],
+                    "headline-md": [
+                            "Noto Serif"
+                    ],
+                    "headline-lg": [
+                            "Noto Serif"
+                    ],
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-xl": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface-bright text-on-surface font-body-lg antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-lg rounded-full mt-4 mx-auto max-w-7xl w-[95%] border border-zinc-100 dark:border-zinc-800 shadow-xl shadow-zinc-200/20 dark:shadow-none flex justify-between items-center px-8 py-3 sticky top-4 z-50">
+<div class="flex-1 hidden md:flex gap-6 items-center">
+<a class="text-zinc-900 dark:text-zinc-50 font-semibold border-b-2 border-zinc-900 dark:border-zinc-50 font-serif tracking-tight text-sm uppercase hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 scale-95 active:scale-90" href="#">Collections</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-medium font-serif tracking-tight text-sm uppercase hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 scale-95 active:scale-90" href="#">New Arrivals</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-medium font-serif tracking-tight text-sm uppercase hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 scale-95 active:scale-90" href="#">Boutiques</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-medium font-serif tracking-tight text-sm uppercase hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 scale-95 active:scale-90" href="#">Journal</a>
+</div>
+<div class="flex-shrink-0 text-center">
+<span class="text-2xl font-serif italic tracking-tighter text-zinc-900 dark:text-zinc-50">AURELIA</span>
+</div>
+<div class="flex-1 flex justify-end items-center gap-4">
+<button aria-label="shopping_bag" class="text-zinc-900 dark:text-zinc-100 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button aria-label="favorite" class="text-zinc-900 dark:text-zinc-100 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button aria-label="person" class="text-zinc-900 dark:text-zinc-100 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</nav>
+<main class="w-full max-w-7xl mx-auto px-container-padding mt-stack-lg flex flex-col gap-stack-lg">
+<!-- Hero Section -->
+<section class="relative w-full rounded-xl overflow-hidden bg-surface-container-low min-h-[70vh] flex flex-col md:flex-row items-stretch shadow-sm">
+<div class="flex-1 p-12 md:p-24 flex flex-col justify-center items-start z-10 bg-surface-container-low/90 backdrop-blur-sm">
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-stack-md max-w-xl">Ethereal Mono Collection</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-md">Embrace soft minimalism with our latest editorial pieces. Structured calm in every seam.</p>
+<div class="flex gap-4">
+<button class="bg-secondary text-on-secondary font-label-caps text-label-caps px-8 py-4 rounded-full shadow-sm hover:opacity-90 transition-opacity">EXPLORE COLLECTION</button>
+<button class="bg-surface border border-outline-variant text-on-surface font-label-caps text-label-caps px-8 py-4 rounded-full hover:bg-surface-container transition-colors">VIEW LOOKBOOK</button>
+</div>
+</div>
+<div class="w-full md:w-1/2 absolute inset-0 md:relative h-full z-0">
+<img alt="Hero Collection Image" class="object-cover w-full h-full" data-alt="A striking digital fashion editorial featuring a model wearing ethereal, flowing monochromatic clothing in a minimalist studio. The lighting is high-key and soft, creating a bright, airy light-mode aesthetic. The scene uses a sophisticated palette of soft whites and faint greys, punctuated by a subtle high-chroma coral accent. The mood is structured calm and highly refined." src="https://lh3.googleusercontent.com/aida/ADBb0uhNW_45jBgJ0rtHpLI6QQKMOHDT9dQRkubrVAsMhIhkr-eTX916hgid3sPd50-oTOaJTZkRuW6-J-zRyvb6zyb-mVtgm5YEBYyt_B0m4WxQeG0JD90KKbxtl-3Sq1lJl-xGcQD5LJdOmX_fKwH_bGTY53ZhFRMc-h7eNMfndZjaLo6ihflo3Ti5YkoQEMbpGp68UOX0piikKDndUqLf5o83LSdi_E-zgPr0pR8PSXUkv39ptUw9cNSCm0-NsH4c4qODTGbnif8Irw"/>
+</div>
+</section>
+<!-- New Arrivals Bento -->
+<section class="flex flex-col gap-stack-md">
+<div class="flex justify-between items-end mb-stack-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">New Arrivals</h2>
+<a class="font-label-caps text-label-caps text-primary hover:underline underline-offset-4" href="#">VIEW ALL</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter auto-rows-[300px]">
+<!-- Card 1 (Large, Yellow Accent Style referencing IMAGE_10) -->
+<div class="md:col-span-2 md:row-span-2 rounded-xl bg-primary-container p-8 flex flex-col justify-between relative overflow-hidden group">
+<div class="z-10 relative">
+<span class="inline-block bg-surface text-on-surface font-label-caps text-label-caps px-3 py-1 rounded-full mb-4 shadow-sm">EDITORIAL</span>
+<h3 class="font-headline-md text-headline-md text-on-primary-container max-w-sm">The Structured Silhouette</h3>
+</div>
+<div class="z-10 relative mt-auto">
+<button class="bg-on-primary-container text-primary-container font-label-caps text-label-caps px-6 py-3 rounded-full hover:opacity-90 transition-opacity">SHOP NOW</button>
+</div>
+<img alt="Editorial Piece" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply transition-transform duration-700 group-hover:scale-105" data-alt="A beautifully styled fashion shot focusing on a structured, minimalist garment. The composition is clean and modern, set against a pristine, brightly lit background with a warm, subtle yellow tint. The lighting highlights the organic, tactile textures of the fabric. The overall mood is sophisticated, airy, and high-end." src="https://lh3.googleusercontent.com/aida/ADBb0ujKqh7wQW1OL-TcgAKA_eXR4k7cHtMiy-2vNBbcCxwvX5SkiBYuRgVooeFK6NBdbxzqYKJN9nZ06PuMuEWWvRrhPhYvzhEiQS3XQIYQW5PqBx4cVlazh9YyTtrSI-fhCIW4mQ8m3Oi-4pi-a2jVVoEUrEa6Yo3hQH-YrY8XCx1J7b6wZM8XeWUG-RwDYpXiyZ3d-H6Qhign4sCTcpa0gj8A9YcsEhK2iUgn48pgtf6nuBVp_LyidaNWcWzSLpTsVp4621_FGMkN"/>
+</div>
+<!-- Card 2 -->
+<div class="rounded-xl bg-surface-container relative overflow-hidden group p-6 flex flex-col justify-end">
+<img alt="Accessory" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up product shot of a minimalist luxury accessory resting on a smooth, rounded surface. The environment is softly lit with bright, diffused light, emphasizing the ethereal and calm aesthetic. The palette is strictly monochromatic with subtle tonal shifts in grey and white. The feel is tactile and premium." src="https://lh3.googleusercontent.com/aida/ADBb0ugLLgZoaHkDcc4uqRh93CYEwLH0gTnkIDkRZ1lGNuq3d35HO93Ib7QvO4tALxdDyQmQgWAjKF4pt2rgsyRb_53wecCztSMOYxcHUbIQEnWhXQGxmL_dWZNP6kRl04tf0hGyWrQ5Sd6bz_kPc5PHlPPG3xhQR_BIecaWEemGb7a-E8cQHEJXrBcTyR4Vh0Os8SVzVyUaovmNUnQ2o_TlS-piD2Vtw3YlQGU0xHw3gV3LvQJFmXE0tJIucNsAsAidoW9Jnx17IEfm_w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="relative z-10">
+<p class="font-label-caps text-label-caps text-surface mb-1">ACCESSORIES</p>
+<p class="font-headline-md text-headline-md text-surface">Woven Form</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="rounded-xl bg-tertiary-container relative overflow-hidden group p-6 flex flex-col justify-end">
+<img alt="Detail Shot" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A detailed macro shot of delicate, flowing fabric in a light, soft environment. The lighting is bright and ethereal, casting very soft shadows that highlight the material's geometry. The color palette is predominantly cool, faint lavender and white, aligning with a structured calm aesthetic. The mood is intimate and refined." src="https://lh3.googleusercontent.com/aida/ADBb0ujJo66NgSRVt9wiTJGVv2kgKpu9YOPvz8rcdhK9ydpv2F3ZD-kXJ8mjcBAFpSriKtfCpYWiFmpWlqFHIIPIEkKTK90A7H__v2ZELjoR8a-xLX9ROHuifodfJc-g5bN2Y2le-t23knBy1t9k97slLQLLWkWRmDRnaijJD9PJ31MAREIRvA1kuXtfavX8Pt7401fyQsrNGmIvkqJkX7_snoH7zMmrpwUp5gmwWn9Xjp3CHuntElKzFBCeSeIlHfNWwya2KaPCfS9Lfg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="relative z-10">
+<p class="font-label-caps text-label-caps text-surface mb-1">DETAIL</p>
+<p class="font-headline-md text-headline-md text-surface">Soft Geometry</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Philosophy / Editorial Block -->
+<section class="bg-surface-container-low rounded-xl p-12 md:p-24 my-stack-lg flex flex-col md:flex-row items-center gap-16 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container/30 rounded-full blur-3xl -mr-20 -mt-20"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-fixed/20 rounded-full blur-3xl -ml-20 -mb-20"></div>
+<div class="flex-1 relative z-10">
+<span class="font-label-caps text-label-caps text-tertiary tracking-widest mb-4 block">PHILOSOPHY</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-8 leading-tight">Finding beauty in the space between structure and softness.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Our approach to design is an exercise in soft minimalism. We create pieces that offer a sense of structured calm, utilizing high-end editorial clarity alongside organic, approachable forms. Every garment is a tactile object designed to breathe.</p>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors" href="#">
+                    READ OUR STORY
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="flex-1 w-full relative z-10">
+<div class="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-xl shadow-zinc-200/50">
+<img alt="Brand Philosophy" class="w-full h-full object-cover" data-alt="An artistic, editorial photograph conveying a sense of structured calm and soft minimalism. The image features a serene, beautifully lit architectural space with extremely soft, rounded corners and fluid geometry. The lighting is airy and bright, using a strictly light-mode palette of pristine whites and faint lavender. The overall emotional response is sophisticated and organically inviting." src="https://lh3.googleusercontent.com/aida/ADBb0ui1G14OFRlfytdQUtvBkaOx0PkHWnQw9B1KMCPHnr9Oz-0BD33RAEmL2L-ezdeCXabky8zqYWPz0lu4nQ_xeXW8utYwiWBHj94fEB6LZaBBsyACMQQpmXmSEbR5cZ1B5Z4J4SNcYl6MXqrNyktxviF36_PDDneU0pQZtZ54NN8Dns4ErL6tfoP85fNlcDtwsvmuf_Le5aOmNk7-TNqvGkelqaXX6DFOhaft2XcB-0UwZ6I_rt11ocmlYt5pMrrEyZ0Sx0G7iIM2"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-50 dark:bg-zinc-950 rounded-t-[48px] mt-20 flex flex-col items-center gap-8 py-16 px-4 w-full">
+<div class="text-xl font-serif italic text-zinc-900 dark:text-zinc-50">
+            AURELIA
+        </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-zinc-500 dark:text-zinc-400 font-serif text-xs tracking-widest uppercase hover:text-zinc-900 dark:hover:text-zinc-100 opacity-80 hover:opacity-100 transition-opacity" href="#">Sustainability</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-serif text-xs tracking-widest uppercase hover:text-zinc-900 dark:hover:text-zinc-100 opacity-80 hover:opacity-100 transition-opacity" href="#">Shipping</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-serif text-xs tracking-widest uppercase hover:text-zinc-900 dark:hover:text-zinc-100 opacity-80 hover:opacity-100 transition-opacity" href="#">Care Guide</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-serif text-xs tracking-widest uppercase hover:text-zinc-900 dark:hover:text-zinc-100 opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-serif text-xs tracking-widest uppercase hover:text-zinc-900 dark:hover:text-zinc-100 opacity-80 hover:opacity-100 transition-opacity" href="#">Terms</a>
+</div>
+<div class="font-serif text-xs tracking-widest uppercase text-zinc-500 dark:text-zinc-400 text-center mt-4">
+            © 2024 AURELIA LUXURY. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>

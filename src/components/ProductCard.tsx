@@ -4,9 +4,10 @@ import type { ProductDto } from '../../../mtse-shared/src/types';
 interface ProductCardProps {
   product: ProductDto;
   onAddToCart: (product: ProductDto) => void;
+  onViewDetails: (product: ProductDto) => void;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onViewDetails }) => {
   return (
     <div className="product-card" style={{
       background: 'white',
@@ -83,28 +84,48 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
               ₹{product.price}
             </span>
           </div>
-          <button 
-            onClick={() => onAddToCart(product)}
-            style={{
-              background: '#1a1a2e',
-              color: 'white',
-              border: 'none',
-              padding: '10px 16px',
-              borderRadius: '8px',
-              fontSize: '0.85rem',
-              fontWeight: 700,
-              cursor: 'pointer',
-              transition: 'background 0.2s',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px'
-            }}
-            onMouseOver={e => e.currentTarget.style.background = '#ff6b35'}
-            onMouseOut={e => e.currentTarget.style.background = '#1a1a2e'}
-          >
-            <span>Add</span>
-            <span style={{ fontSize: '1rem' }}>+</span>
-          </button>
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <button 
+              onClick={() => onViewDetails(product)}
+              style={{
+                background: '#f5f5f7',
+                color: '#1a1a2e',
+                border: '1px solid #ddd',
+                padding: '10px 14px',
+                borderRadius: '8px',
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+                transition: 'background 0.2s',
+              }}
+              onMouseOver={e => e.currentTarget.style.background = '#e5e5e7'}
+              onMouseOut={e => e.currentTarget.style.background = '#f5f5f7'}
+            >
+              Details
+            </button>
+            <button 
+              onClick={() => onAddToCart(product)}
+              style={{
+                background: '#1a1a2e',
+                color: 'white',
+                border: 'none',
+                padding: '10px 14px',
+                borderRadius: '8px',
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+                transition: 'background 0.2s',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px'
+              }}
+              onMouseOver={e => e.currentTarget.style.background = '#ff6b35'}
+              onMouseOut={e => e.currentTarget.style.background = '#1a1a2e'}
+            >
+              <span>Add</span>
+              <span style={{ fontSize: '1rem' }}>+</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

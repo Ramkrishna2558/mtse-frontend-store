@@ -4,6 +4,7 @@ import { useConfig } from '../../context/ConfigContext';
 import { useCustomerAuth } from '../../context/CustomerAuthContext';
 import { ProductCard } from '../../components/ProductCard';
 import { OrderHistory } from './OrderHistory';
+import { ProductDetailModal } from '../../components/ProductDetailModal';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from '../../components/common/Snackbar';
 import { useStore } from '../../stores/useStore';
@@ -16,21 +17,22 @@ export const Storefront: React.FC = () => {
   const { showSnackbar } = useSnackbar();
 
   // Use global store
-  const { 
-    searchTerm, 
-    selectedCategory, 
+  const {
+    searchTerm,
+    selectedCategory,
     setSelectedCategory,
-    cart, 
-    addToCart, 
+    cart,
+    addToCart,
     clearCart,
-    isCartOpen, 
+    isCartOpen,
     setIsCartOpen,
-    showHistory, 
+    showHistory,
     setShowHistory
   } = useStore();
 
   const [sortBy, setSortBy] = useState<'relevance' | 'price_asc' | 'price_desc' | 'newest'>('relevance');
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 200000]);
+  const [selectedProductForModal, setSelectedProductForModal] = useState<ProductDto | null>(null);
 
   const [checkoutForm, setCheckoutForm] = useState({
     flatNo: '',
@@ -230,7 +232,12 @@ export const Storefront: React.FC = () => {
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.5rem' }}>
                 {filteredProducts.map(p => (
-                  <ProductCard key={p.id} product={p} onAddToCart={handleAddToCart} />
+                  <ProductCard 
+                    key={p.id} 
+                    product={p} 
+                    onAddToCart={handleAddToCart} 
+                    onViewDetails={(prod) => setSelectedProductForModal(prod)} 
+                  />
                 ))}
               </div>
 
@@ -280,6 +287,14 @@ export const Storefront: React.FC = () => {
         </div>
       </footer>
 
+      {selectedProductForModal && (
+        <ProductDetailModal
+          product={selectedProductForModal}
+          isOpen={true}
+          onClose={() => setSelectedProductForModal(null)}
+          onAddToCart={handleAddToCart}
+        />
+      )}
     </div>
   );
 };

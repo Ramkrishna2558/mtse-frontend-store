@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Storefront } from '../features/storefront/Storefront';
+import { ThemedStorefront } from '../features/storefront/ThemedStorefront';
 import { CustomerLogin } from '../features/auth/CustomerLogin';
 
 function NotFoundPage() {
@@ -15,6 +16,7 @@ export function AppRouter() {
   return (
     <Routes>
       <Route path="/" element={<Storefront />} />
+      <Route path="/store/:slug" element={<ThemedStorefront />} />
       <Route path="/login" element={<CustomerLogin />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

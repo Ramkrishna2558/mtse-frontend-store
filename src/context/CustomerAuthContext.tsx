@@ -46,7 +46,7 @@ export const CustomerAuthProvider: React.FC<{ children: React.ReactNode }> = ({ 
         password,
         firstName,
         lastName,
-        role: 'customer'
+        role: 'CUSTOMER' // backend validates against the Prisma UserRole enum (uppercase)
       });
 
       const { access_token, user } = response.data;
